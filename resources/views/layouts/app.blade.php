@@ -22,6 +22,7 @@
         .signup-form h2 {
             color: #1a2341;
             text-align: center;
+            margin-bottom: 10%;
         }
 
         .signup-form {
@@ -46,6 +47,17 @@
             min-width: 140px;
             outline: none !important;
         }
+       
+
+
+        .signup-form button[id="button-save"] {
+            background-color: #0069A5;
+            color: #f2f3f7;
+            font-size: 16px;
+            min-width: 140px;
+            outline: none !important;
+        }
+
         .signup-form .text-center[id="havent_register"] {
             color: #f2f3f7;
             
@@ -54,6 +66,13 @@
         .signup-form .text-center a[id="link_register"] {
             color: #f2f3f7;
             text-decoration: underline;
+        }
+        .signup-form .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .signup-form .text-center a[id="forgot user"]{
+            color: #f2f3f7;
         }
 
         
