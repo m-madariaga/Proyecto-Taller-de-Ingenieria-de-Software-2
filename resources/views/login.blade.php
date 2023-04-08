@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('content')
-    <div class="signup-form">
+    <div class="loginup-form">
         <form action="">
             @csrf
             <h2>¡Bienvenido!</h2>
