@@ -21,25 +21,22 @@
             font-family: 'Montserrat', sans-serif;
         }
 
-        .loginup-form h2, .signup-form {
+        .loginup-form h2, .signup-form h2, .reset-form h2{
             color: #1a2341;
             text-align: center;
             margin-bottom: 10%;
         }
 
-        .loginup-form, .signup-form {
-            width: 450px;
-            margin: 0 auto;
-            padding: 30px 0;
-            font-size: 15px;
-        }
 
-        .loginup-form form, .signup-form {
+        .loginup-form , .signup-form, .reset-form {
             border-radius: 3px;
             margin-bottom: 15px;
             background-color: #f2f3f7;
             box-shadow: 0px 2prgb(184, 184, 184)gba(0, 0, 0, 0.3);
-            padding: 30px;
+            padding: 20px;
+            width: 700px;
+            margin: 0 auto;
+            font-size: 15px;
         }
 
         .loginup-form button[id="button-login"], .signup-form button[id="button-save"] {
@@ -77,7 +74,7 @@
         }
 
         .signup-form .form-select[id="rol_register"]{
-            margin-top: 30px;
+            margin-top: 20px;
             margin-bottom: 15px;
 
         }
