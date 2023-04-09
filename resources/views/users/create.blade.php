@@ -22,9 +22,14 @@
                 <input type="password" name="password" id="password" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="tipo_de_cuenta">Tipo de cuenta:</label>
-                <input type="number" name="tipo_de_cuenta" id="tipo_de_cuenta" class="form-control" required>
+                <label for="tipo_de_cuenta">Tipo de cuenta</label>
+                <select class="form-control" id="tipo_de_cuenta" name="tipo_de_cuenta">
+                    <option value="1">Admin</option>
+                    <option value="2">Analista</option>
+                    <option value="3">Trabajador</option>
+                </select>
             </div>
+
             <button type="submit" class="btn btn-primary">Agregar</button>
         </form>
     </div>

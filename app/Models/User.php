@@ -20,6 +20,20 @@ class User extends Authenticatable
         'tipo_de_cuenta',
     ];
 
+    public function getTipoDeCuenta($value)
+    {
+        switch ($value) {
+            case 1:
+                return 'Admin';
+            case 2:
+                return 'Analista';
+            case 3:
+                return 'Trabajador';
+            default:
+                return null;
+        }
+    }
+
     protected $primaryKey = 'rut';
 
     public $incrementing = false;
