@@ -11,8 +11,6 @@ use Illuminate\Support\Facades\Validator;
 
 class RegisterController extends Controller
 {
-   
-
     use RegistersUsers;
 
     /**

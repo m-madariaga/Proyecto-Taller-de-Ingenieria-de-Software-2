@@ -14,15 +14,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/',function(){
-    return view('home
-    ');
+    return view('home');
 })->name('/');
-
-
-<<<<<<< Updated upstream
-=======
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
->>>>>>> Stashed changes

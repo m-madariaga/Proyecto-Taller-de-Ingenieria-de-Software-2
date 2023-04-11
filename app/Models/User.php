@@ -18,10 +18,7 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-<<<<<<< Updated upstream
-=======
         'run',
->>>>>>> Stashed changes
         'name',
         'email',
         'password',
