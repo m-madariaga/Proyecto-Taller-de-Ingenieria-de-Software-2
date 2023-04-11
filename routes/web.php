@@ -19,3 +19,10 @@ Route::get('/',function(){
 })->name('/');
 
 
+<<<<<<< Updated upstream
+=======
+
+Auth::routes();
+
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+>>>>>>> Stashed changes
