@@ -13,16 +13,19 @@ use App\Http\Controllers\Auth\LoginController;
 |
 */
 Route::get('/',function(){
-    return view('home');
-})->name('/');
+    return view('admin_welcome');
+})->name('/')->middleware('auth');
 
-// Home
-Route::get('home/page',[App\Http\Controllers\HomeController::class,'index'])->name('home/page');
+Route::get('/analista',function(){
+    return view('analista_welcome');
+})->name('analista')->middleware('auth');
+
+Route::get('/trabajador',function(){
+    return view('analista_welcome');
+})->name('trabajador')->middleware('auth');
+
+
+
 Auth::routes();
 
-
-// login
-Route::get('form/login/view/new',[App\Http\Controllers\Auth\LoginController::class,'viewLogin'])->name('form/login/view/new');
-Route::post('form/login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('form/login');
-Route::get('form/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('form/logout');
-
+Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
