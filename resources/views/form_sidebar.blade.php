@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
 <aside class="col-12 col-md-2 p-0 bg-dark flex-shrink-1">
     <nav class="navbar navbar-expand navbar-dark bg-dark flex-md-column flex-row align-items-start py-1">
         <div class="collapse navbar-collapse ">
