@@ -93,21 +93,20 @@
 
         }
 
-        .navbar[ id="nav_header"]{
-            background-color:  #1a2341;
-           
+        .navbar[ id="nav_header"] {
+            background-color: #1a2341;
+
         }
 
-        .navbar[ id="nav_header"] .navbar-brand{
+        .navbar[ id="nav_header"] .navbar-brand {
             color: #f2f3f7;
             font-family: 'Montserrat', sans-serif;
         }
-        .aside{
-            background-color:  #1A2341;
+
+        .aside {
+            background-color: #1A2341;
             color: #f2f3f7;
         }
- 
-     
     </style>
 </head>
 
