@@ -21,6 +21,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->integer('tipo_cuenta');
             $table->rememberToken();
+            $table->integer('tipo_de_cuenta')->nullable();
             $table->timestamps();
         });
     }

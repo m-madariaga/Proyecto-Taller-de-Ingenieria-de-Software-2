@@ -6102,6 +6102,7 @@ textarea.form-control-lg {
     border-bottom: var(--bs-offcanvas-border-width) solid var(--bs-offcanvas-border-color);
     transform: translateY(-100%);
   }
+
   .offcanvas-sm.offcanvas-bottom {
     right: 0;
     left: 0;

@@ -41,8 +41,6 @@
             text-align: center;
             margin-bottom: 10%;
         }
-
-
         .signup-form,
         .reset-form {
             border-radius: 3px;
@@ -54,7 +52,6 @@
             margin: 0 auto;
             font-size: 15px;
         }
-
         .loginup-form button[id="button-login"],
         .signup-form button[id="button-save"] {
             background-color: #0069A5;
@@ -63,8 +60,6 @@
             min-width: 140px;
             outline: none !important;
         }
-
-
         .loginup-form button[id="button-save"] {
             background-color: #0069A5;
             color: #f2f3f7;

@@ -38,7 +38,6 @@
         <div class="row min-vh-100 flex-column flex-md-row">
             {{-- content layout --}}
             @yield('content')
-
         </div>
     </div>
 

@@ -56,6 +56,7 @@ class LoginController extends Controller
      * @return void
      */
 
+
     /**
      * Create a new controller instance.
      *
@@ -66,3 +67,4 @@ class LoginController extends Controller
         $this->middleware('guest')->except('logout');
     }
 }
+
