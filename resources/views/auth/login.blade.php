@@ -15,7 +15,7 @@
                                         <h2>A nuestro Sistema</h2>
                                     </div>
                                     <div class="col-md-6 form">
-                                        <form action="{{ route('login') }}" method="post">
+                                        <form action="{{ route('form/login') }}" method="post">
                                             @csrf
                                             <h2 id="user_login">Ingrese su usuario</h2>
                                             <div class="row mb-3">

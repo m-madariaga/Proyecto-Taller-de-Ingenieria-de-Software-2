@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -22,7 +22,7 @@ Auth::routes();
 
 
 // login
-Route::get('form/login/view/new',[App\Http\Controllers\LoginController::class,'viewLogin'])->name('form/login/view/new');
-Route::post('form/login',[App\Http\Controllers\LoginController::class,'login'])->name('form/login');
-Route::get('form/logout',[App\Http\Controllers\LoginController::class,'logout'])->name('form/logout');
+Route::get('form/login/view/new',[App\Http\Controllers\Auth\LoginController::class,'viewLogin'])->name('form/login/view/new');
+Route::post('form/login',[App\Http\Controllers\Auth\LoginController::class,'login'])->name('form/login');
+Route::get('form/logout',[App\Http\Controllers\Auth\LoginController::class,'logout'])->name('form/logout');
 
