@@ -14,14 +14,9 @@ class CreateUsersTable extends Migration
     public function up()
     {
         Schema::create('users', function (Blueprint $table) {
-<<<<<<< Updated upstream
-            $table->bigInteger('id')->primary()->unsigned();
-            $table->string('name');
-=======
-            $table->id();
+            $table->bigInteger('id')->primary()->unsigned();            
             $table->string('name_register');
             $table->string('last_name_register');
->>>>>>> Stashed changes
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
