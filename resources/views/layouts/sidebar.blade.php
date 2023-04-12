@@ -8,67 +8,93 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-home"></i>
-                    Home
+                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                    Usuario
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Home 1</a>
+                        <a href="#">Ingreso datos Usuarios</a>
                     </li>
                     <li>
-                        <a href="#">Home 2</a>
+                        <a href="#">Modificación datos Usuarios</a>
                     </li>
                     <li>
-                        <a href="#">Home 3</a>
+                        <a href="#">Eliminar datos Usuario</a>
+                    </li>
+                    <li>
+                        <a href="#">Listar Usuarios</a>
                     </li>
                 </ul>
             </li>
             <li>
-                <a href="#">
-                    <i class="fas fa-briefcase"></i>
-                    About
-                </a>
-                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                    <i class="fas fa-copy"></i>
-                    Pages
+                <a href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                   Generador
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li>
-                        <a href="#">Page 1</a>
+                        <a href="#">Ingreso datos Generador</a>
                     </li>
                     <li>
-                        <a href="#">Page 2</a>
+                        <a href="#">Modificación datos Generador</a>
                     </li>
                     <li>
-                        <a href="#">Page 3</a>
+                        <a href="#">Eliminar datos Generador</a>
+                    </li>
+                    <li>
+                        <a href="#">Listar Generadores</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="#calderaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                   Caldera
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Ingreso datos Caldera</a>
+                    </li>
+                    <li>
+                        <a href="#">Modificación datos Caldera</a>
+                    </li>
+                    <li>
+                        <a href="#">Eliminar datos Caldera</a>
+                    </li>
+                    <li>
+                        <a href="#">Listar Calderas</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#actionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                   
+                    Acciones
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li>
+                        <a href="#">Acción 1</a>
+                    </li>
+                    <li>
+                        <a href="#">Acción 2</a>
+                    </li>
+                    <li>
+                        <a href="#">Acción 3</a>
                     </li>
                 </ul>
             </li>
             <li>
                 <a href="#">
-                    <i class="fas fa-image"></i>
-                    Portfolio
+                    Consumo
                 </a>
             </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-question"></i>
-                    FAQ
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <i class="fas fa-paper-plane"></i>
-                    Contact
-                </a>
-            </li>
+        
+            
         </ul>
 
-       
+
     </nav>
 
-  
+
 </div>
 
 <!-- jQuery CDN - Slim version (=without AJAX) -->

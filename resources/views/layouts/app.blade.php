@@ -31,7 +31,7 @@
 
     <style>
         body {
-            background-color: #0069A5;
+            background-color: #f2f3f7;
             font-family: 'Montserrat', sans-serif;
         }
 
@@ -128,7 +128,6 @@
                 @yield('content')
             </main>
         </div>
-
     </div>
 </body>
 

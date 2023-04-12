@@ -21,7 +21,7 @@ Route::get('/analista',function(){
 })->name('analista')->middleware('auth');
 
 Route::get('/trabajador',function(){
-    return view('analista_welcome');
+    return view('trabajador_welcome');
 })->name('trabajador')->middleware('auth');
 
 

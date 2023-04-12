@@ -63,9 +63,10 @@ span {
 #sidebar {
     min-width: 250px;
     max-width: 250px;
-    background: #7386D5;
+    background: #0069A5;
     color: #fff;
     transition: all 0.3s;
+    color: white;
 }
 
 #sidebar.active {
@@ -100,6 +101,11 @@ span {
     margin-bottom: 5px;
 }
 
+.navbar[ id="nav_header"] .navbar-brand {
+    color: #f2f3f7;
+    font-family: 'Montserrat', sans-serif;
+}
+
 #sidebar.active ul ul a {
     padding: 10px !important;
 }
@@ -115,7 +121,7 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #6d7fcc;
+    background: #223367;
 }
 
 #sidebar .sidebar-header strong {
@@ -135,18 +141,18 @@ span {
 }
 
 #sidebar ul li a:hover {
-    color: #7386D5;
+    color: #0069A5;
     background: #fff;
 }
 
 #sidebar ul li a i {
-    margin-right: 10px;
+    margin-right: 20px;
 }
 
 #sidebar ul li.active>a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #6d7fcc;
+    background: #32B0E4;
 }
 
 a[data-toggle="collapse"] {
