@@ -1,34 +1,40 @@
-<!DOCTYPE html>
-<html lang="es">
+<!doctype html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Login Form</title>
-    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
-        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
-        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous">
+    <!-- CSRF Token -->
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
+    <title>{{ config('app.name', 'Laravel') }}</title>
+
+    <!-- Scripts -->
+    <script src="{{ asset('js/app.js') }}" defer></script>
+
+    <!-- Fonts -->
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
+
+    <!-- Styles -->
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
     </script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous">
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
 
     <style>
         body {
-            background-color: #0069A5;
+            background-color: #f2f3f7;
             font-family: 'Montserrat', sans-serif;
         }
+
         .signup-form h2,
         .reset-form h2 {
             color: #1a2341;
@@ -61,45 +67,63 @@
             min-width: 140px;
             outline: none !important;
         }
+
         .text-center[id="havent_register"] {
             color: #f2f3f7;
+
         }
+
         .text-center a[id="link_register"] {
             color: #f2f3f7;
             text-decoration: underline;
         }
+
         .form-group,
         .signup-form {
             margin-bottom: 20px;
         }
+
         .text-center a[id="forgot_user"] {
             color: #0b0b0b;
         }
+
         .signup-form .form-select[id="rol_register"] {
             margin-top: 20px;
             margin-bottom: 15px;
+
         }
-        .navbar[ id="nav_header"]{
-            background-color:  #1a2341;
-           
+
+        .navbar[ id="nav_header"] {
+            background-color: #1a2341;
+
         }
-        .navbar[ id="nav_header"] .navbar-brand{
+
+        .navbar[ id="nav_header"] .navbar-brand {
             color: #f2f3f7;
             font-family: 'Montserrat', sans-serif;
         }
-        .aside{
-            background-color:  #1A2341;
+
+        .aside {
+            background-color: #1A2341;
             color: #f2f3f7;
         }
- 
-     
     </style>
 </head>
 
 <body>
+    <div id="app" class="wrapper">
+        @guest
+            @else
+            @include('layouts.sidebar')
+        @endguest
 
-    @yield('content')
-
+        <div id=content>
+            @include('layouts.sidehead')
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
+    </div>
 </body>
 
 </html>
