@@ -26,6 +26,3 @@ Route::get('form/login/view/new',[App\Http\Controllers\LoginController::class,'v
 Route::post('form/login',[App\Http\Controllers\LoginController::class,'login'])->name('form/login');
 Route::get('form/logout',[App\Http\Controllers\LoginController::class,'logout'])->name('form/logout');
 
-Auth::routes();
-
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
