@@ -25,6 +25,25 @@ class User extends Authenticatable
         'tipo_cuenta',
     ];
 
+    public function getTipoDeCuenta($value)
+    {
+        switch ($value) {
+            case 1:
+                return 'Admin';
+            case 2:
+                return 'Analista';
+            case 3:
+                return 'Trabajador';
+            default:
+                return null;
+        }
+    }
+
+
+    public $incrementing = false;
+
+    protected $keyType = 'bigint';
+
     /**
      * The attributes that should be hidden for serialization.
      *
@@ -32,7 +51,7 @@ class User extends Authenticatable
      */
     protected $hidden = [
         'password',
-        'remember_token',
+
     ];
 
     /**
@@ -40,7 +59,5 @@ class User extends Authenticatable
      *
      * @var array<string, string>
      */
-    protected $casts = [
-        'email_verified_at' => 'datetime',
-    ];
+
 }

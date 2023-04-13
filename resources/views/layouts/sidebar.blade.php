@@ -8,12 +8,14 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="{{ route('register') }}"> ajja</a>
+
+                <a href="{{ route('register') }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     Usuario
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Ingreso datos Usuarios</a>
+                        <a href="{{ route('register') }}">Ingreso datos Usuarios</a>
                     </li>
                     <li>
                         <a href="#">Modificación datos Usuarios</a>
@@ -22,7 +24,7 @@
                         <a href="#">Eliminar datos Usuario</a>
                     </li>
                     <li>
-                        <a href="#">Listar Usuarios</a>
+                        <a href="#vaparalist_user">Listar Usuarios</a>
                     </li>
                 </ul>
             </li>
