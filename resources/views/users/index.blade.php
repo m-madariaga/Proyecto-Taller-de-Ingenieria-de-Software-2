@@ -7,7 +7,7 @@
     <table id="users-table" class="display" width="100%">
         <thead>
             <tr>
-                <th>Rut</th>
+                <th>Run</th>
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Tipo de cuenta</th>
@@ -17,7 +17,7 @@
         <tbody>
             @foreach($users as $user)
                 <tr>
-                    <td>{{ $user->rut }}</td>
+                    <td>{{ $user->run }}</td>
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
