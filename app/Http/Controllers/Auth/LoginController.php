@@ -5,7 +5,9 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Http\Request;
 use Auth;
+use Spatie\Permission\Traits\HasRoles;
 
 class LoginController extends Controller
 {
@@ -28,28 +30,19 @@ class LoginController extends Controller
      * @var string
      */
     protected $redirectTo;
-    public function redirectTo()
+    protected function authenticated(Request $request, $user)
     {
-        error_log("function start");
-        switch(Auth::user()->tipo_de_cuenta){
-            case 2:
-                error_log("analista true");
-                return redirect()->route('analista');
-                break;
-            case 3:
-                return redirect()->route('trabajador');
-                break;
-            case 1:
-                error_log("admin true");
-                return redirect()->route('/');
-                break;
-            default:
-                return redirect()->route('trabajador');
+
+        if($user->hasRole('admin')){
+            return redirect('/');
+        } elseif($user->hasRole('analista')){
+            return redirect('/analista');
+        }else{
+            return redirect('/trabajador');
         }
-         
-        // return $next($request);
-        error_log("function end");
-    } 
+        //return property_exists($this, 'redirectTo') ? $this->redirectTo : 'admin/';
+
+    }
     /**
      * Create a new controller instance.
      *
