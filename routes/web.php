@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Auth\LoginController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -12,10 +12,19 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/',function(){
+    return view('admin_welcome');
+})->name('/')->middleware('auth');
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/analista',function(){
+    return view('analista_welcome');
+})->name('analista')->middleware('auth');
+
+Route::get('/trabajador',function(){
+    return view('trabajador_welcome');
+})->name('trabajador')->middleware('auth');
+
+
 
 Auth::routes();
 
