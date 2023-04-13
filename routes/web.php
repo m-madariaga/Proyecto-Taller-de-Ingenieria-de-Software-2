@@ -2,6 +2,9 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
+use Illuminate\Notifications\Action;
+use App\Http\Controllers\actionController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -25,6 +28,7 @@ Route::get('/trabajador',function(){
 })->name('trabajador')->middleware('auth');
 
 
+Route::get('/action',[App\Http\Controllers\actionController::class,'index'])->name('action.index');
 
 Auth::routes();
 
