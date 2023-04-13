@@ -37,7 +37,7 @@ class UserController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'rut' => 'required|unique:users,rut',
+            'run' => 'required|unique:users,run',
             'name' => 'required',
             'email' => 'required|unique:users,email',
             'password' => 'required',
@@ -45,7 +45,7 @@ class UserController extends Controller
         ]);
 
         $user = new User([
-            'rut' => $request->get('rut'),
+            'run' => $request->get('run'),
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
@@ -60,7 +60,7 @@ class UserController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  int  $rut
+     * @param  int  $run
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,12 +71,12 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $rut
+     * @param  int  $run
      * @return \Illuminate\Http\Response
      */
-    public function edit($rut)
+    public function edit($run)
     {
-        $user = User::find($rut);
+        $user = User::find($run);
 
         return view('users.edit', compact('user'));
     }
@@ -85,10 +85,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $rut
+     * @param  int  $run
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $rut)
+    public function update(Request $request, $run)
     {
         $request->validate([
             'name' => 'required',
@@ -96,7 +96,7 @@ class UserController extends Controller
             'tipo_de_cuenta' => 'nullable',
         ]);
 
-        $user = User::find($rut);
+        $user = User::find($run);
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->tipo_de_cuenta = $request->get('tipo_de_cuenta');
@@ -108,12 +108,12 @@ class UserController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $rut
+     * @param  int  $run
      * @return \Illuminate\Http\Response
      */
-    public function destroy($rut)
+    public function destroy($run)
     {
-        $user = User::find($rut);
+        $user = User::find($run);
         $user->delete();
 
         return redirect('/users')->with('success', 'Usuario eliminado exitosamente!');

@@ -8,7 +8,6 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="{{ route('register') }}"> ajja</a>
 
                 <a href="{{ route('register') }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
                     Usuario
