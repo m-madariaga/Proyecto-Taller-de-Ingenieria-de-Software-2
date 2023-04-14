@@ -33,12 +33,12 @@ class LoginController extends Controller
     protected function authenticated(Request $request, $user)
     {
 
-        if($user->hasRole('admin')){
-            return redirect('/');
-        } elseif($user->hasRole('analista')){
-            return redirect('/analista');
+        if($user->hasPermissionTo('vista admin')){
+            return redirect('/admin/welcome');
+        } elseif($user->hasPermissionTo('vista analista')){
+            return redirect('/analista/welcome');
         }else{
-            return redirect('/trabajador');
+            return redirect('/trabajador/welcome');
         }
         //return property_exists($this, 'redirectTo') ? $this->redirectTo : 'admin/';
 

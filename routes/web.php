@@ -14,19 +14,30 @@ use App\Http\Controllers\Controller\UserController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
 Route::get('/',function(){
-    return view('admin_welcome');
-})->name('/')->middleware('auth');
+    return view('auth/login');
+});
 
-Route::get('/analista',function(){
-    return view('analista_welcome');
-})->name('analista')->middleware('auth');
-
-Route::get('/trabajador',function(){
-    return view('trabajador_welcome');
-})->name('trabajador')->middleware('auth');
+Route::group(['middleware' => ['permission:vista admin'], 'prefix' => 'admin'], function () {
+    Route::get('/welcome',function(){
+        return view('admin_welcome');
+    })->name('admin');
+});
 
 
+Route::group(['middleware' => ['permission:vista analista'], 'prefix' => 'analista'], function () {
+    //insertar rutas de analista aqui
+    Route::get('/welcome',function(){
+        return view('analista_welcome');
+    })->name('analista');
+});
+
+Route::group(['middleware' => ['permission:vista trabajador'], 'prefix' => 'trabajador'], function () {
+    Route::get('/welcome',function(){
+        return view('trabajador_welcome');
+    })->name('trabajador');
+});
 
 Auth::routes();
 

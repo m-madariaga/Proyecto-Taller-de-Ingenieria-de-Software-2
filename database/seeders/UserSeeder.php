@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use Illuminate\Database\Seeder;
 use App\Models\User;
 use Spatie\Permission\Models\Role;
+use Spatie\Permission\Models\Permission;
 
 class UserSeeder extends Seeder
 {
@@ -16,8 +17,14 @@ class UserSeeder extends Seeder
     public function run()
     {
         $role1 = Role::create(['name' => 'admin']);
+        $permission1 = Permission::create(['name' => 'vista admin']);
+        $role1->givePermissionTo($permission1);
         $role2 = Role::create(['name' => 'analista']);
+        $permission2 = Permission::create(['name' => 'vista analista']);
+        $role2->givePermissionTo($permission2);
         $role3 = Role::create(['name' => 'trabajador']);
+        $permission3 = Permission::create(['name' => 'vista trabajador']);
+        $role3->givePermissionTo($permission3);
 
         $user = new User();
             $user->run              = 1;
