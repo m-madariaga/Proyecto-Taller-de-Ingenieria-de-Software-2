@@ -1,4 +1,4 @@
-@extends('layouts.app')
+{{-- @extends('layouts.app') --}}
 <nav class="navbar navbar-expand-lg navbar-light" id="nav_header">
     <a class="navbar-brand" href="#">Proyecto Trabajo</a>
     <ul class="nav navbar-nav ml-auto">
