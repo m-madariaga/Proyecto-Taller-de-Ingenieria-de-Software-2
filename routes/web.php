@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Controller\UserController;
 use App\Http\Controllers\Controller\roleController;
+use App\Http\Controllers\Controller\permissionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,6 +32,12 @@ Route::group(['middleware' => ['permission:vista admin'], 'prefix' => 'admin'], 
     Route::get('/roles/{id}/edit', [App\Http\Controllers\roleController::class, 'edit'])->name('roles.edit');
     Route::patch('/roles/{id}', [App\Http\Controllers\roleController::class, 'update'])->name('roles.update');
     Route::delete('/roles/{id}', [App\Http\Controllers\roleController::class, 'destroy'])->name('roles.destroy');
+
+    Route::get('/permissions', [App\Http\Controllers\permissionController::class, 'index'])->name('permissions.index');
+    Route::get('/permissions/create', [App\Http\Controllers\permissionController::class, 'create'])->name('permissions.create');
+    Route::post('/permissions/store', [App\Http\Controllers\permissionController::class, 'store'])->name('permissions.store');
+    Route::get('/permissions/{id}/edit', [App\Http\Controllers\permissionController::class, 'edit'])->name('permissions.edit');
+    Route::delete('/permissions/{id}', [App\Http\Controllers\permissionController::class, 'destroy'])->name('permissions.destroy');
 });
 
 
