@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Controller\UserController;
+use App\Http\Controllers\Controller\roleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,13 +17,20 @@ use App\Http\Controllers\Controller\UserController;
 */
 
 Route::get('/',function(){
-    return view('auth/login');
+    return redirect('/login');
 });
 
 Route::group(['middleware' => ['permission:vista admin'], 'prefix' => 'admin'], function () {
     Route::get('/welcome',function(){
         return view('admin_welcome');
     })->name('admin');
+
+    Route::get('/roles', [App\Http\Controllers\roleController::class, 'index'])->name('roles.index');
+    Route::get('/roles/create', [App\Http\Controllers\roleController::class, 'create'])->name('roles.create');
+    Route::post('/roles/store', [App\Http\Controllers\roleController::class, 'store'])->name('roles.store');
+    Route::get('/roles/{id}/edit', [App\Http\Controllers\roleController::class, 'edit'])->name('roles.edit');
+    Route::patch('/roles/{id}', [App\Http\Controllers\roleController::class, 'update'])->name('roles.update');
+    Route::delete('/roles/{id}', [App\Http\Controllers\roleController::class, 'destroy'])->name('roles.destroy');
 });
 
 
