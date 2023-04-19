@@ -8,90 +8,42 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-
-                <a href="{{ route('users.index') }}" data-toggle="collapse" aria-expanded="false" class="Button">
-                    Usuario
+                <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                    Usuarios
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
-                    <li>
-                        <a href="{{ route('register') }}">Ingreso datos Usuarios</a>
-                    </li>
-                    <li>
-                        <a href="#">Modificación datos Usuarios</a>
-                    </li>
-                    <li>
-                        <a href="#">Eliminar datos Usuario</a>
-                    </li>
-                    <li>
-                        <a href="#vaparalist_user">Listar Usuarios</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                   Generador
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Ingreso datos Generador</a>
-                    </li>
-                    <li>
-                        <a href="#">Modificación datos Generador</a>
-                    </li>
-                    <li>
-                        <a href="#">Eliminar datos Generador</a>
-                    </li>
-                    <li>
-                        <a href="#">Listar Generadores</a>
-                    </li>
-                </ul>
-            </li>
-
-            <li>
-                <a href="#calderaSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                   Caldera
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Ingreso datos Caldera</a>
-                    </li>
-                    <li>
-                        <a href="#">Modificación datos Caldera</a>
-                    </li>
-                    <li>
-                        <a href="#">Eliminar datos Caldera</a>
-                    </li>
-                    <li>
-                        <a href="#">Listar Calderas</a>
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <a href="#actionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-
-                    Acciones
-                </a>
-                <ul class="collapse list-unstyled" id="pageSubmenu">
-                    <li>
-                        <a href="#">Acción 1</a>
-                    </li>
-                    <li>
-                        <a href="#">Acción 2</a>
-                    </li>
-                    <li>
-                        <a href="#">Acción 3</a>
-                    </li>
+                    <li><a href="{{ route('users.index') }}">Lista Usuarios</a></li>
+                    <li><a href="#">Roles</a></li>
+                    <li><a href="#">Permisos</a></li>
                 </ul>
             </li>
             <li>
                 <a href="#">
-                    Consumo
+                    <i class="glyphicon glyphicon-briefcase"></i>
+                    Generadores
+                </a>
+                <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
+                    <i class="glyphicon glyphicon-duplicate"></i>
+                    Calderas
+                </a>
+                <ul class="collapse list-unstyled" id="pageSubmenu">
+                    <li><a href="#">Pagina</a></li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="glyphicon glyphicon-link"></i>
+                    Reporte
                 </a>
             </li>
-
-
+            <li>
+                <a href="#">
+                    <i class="glyphicon glyphicon-paperclip"></i>
+                    Sección de API´S
+                </a>
+            </li>
+        
         </ul>
-
 
     </nav>
 
