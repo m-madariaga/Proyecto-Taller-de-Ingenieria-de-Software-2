@@ -1,6 +1,6 @@
 
 <nav class="navbar navbar-expand-md navbar-light shadow-sm" id="nav_header">
-    <div class="container">
+    <div class="container-fluid">
 
         @guest
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
