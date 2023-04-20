@@ -42,9 +42,9 @@ class User extends Authenticatable
     }
 
 
-    public $incrementing = false;
+    //public $incrementing = false;
 
-    protected $keyType = 'bigint';
+    
 
     /**
      * The attributes that should be hidden for serialization.

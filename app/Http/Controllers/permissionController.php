@@ -12,7 +12,7 @@ class permissionController extends Controller
     {
         $permissions = Permission::all();
 
-        // foreach($roles as $role){
+        // foreach($permissions as $permission){
             
         //     $user_amount = User::role($role->name)->get();
         //     $role->role_count= $user_amount->count();
@@ -32,9 +32,35 @@ class permissionController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            // 'role_type' => 'nullable'
         ]);
 
         $permission = Permission::create(['name' => $request->name]);
+
+        // switch($request->role_type){
+        //     case 1:
+        //         $base_permission= Permission::findOrFail(1);
+        //         $roles = $base_permission->getRoleNames();
+        //         foreach($roles as $role){
+        //             $role->givePermissionTo($permission);
+        //         }
+        //         break;
+        //     case 2:
+        //         $base_permission= Permission::findOrFail(2);
+        //         $roles = $base_permission->getRoleNames();
+        //         foreach($roles as $role){
+        //             $role->givePermissionTo($permission);
+        //         }
+        //         break;
+        //     case 3:
+        //         $base_permission= Permission::findOrFail(3);
+        //         $roles = $base_permission->getRoleNames();
+        //         foreach($roles as $role){
+        //             $role->givePermissionTo($permission);
+        //         }
+        //         break;
+        //     default:
+        // }
 
         return redirect('/admin/permissions')->with('success', 'Permiso creado exitosamente!');
     }
@@ -45,6 +71,33 @@ class permissionController extends Controller
 
 
         return view('permissions.edit', compact('permission'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $request->validate([
+            'name' => 'required',
+        ]);
+
+        $permission = Permission::find($id);
+        $permission->name = $request->name;
+        $permission->save();
+
+        // switch($request->role_type){
+        //     case 1:
+        //         $role->syncPermissions(['vista admin']);
+        //         break;
+        //     case 2:
+        //         $role->syncPermissions(['vista analista']);
+        //         break;
+        //     case 3:
+        //         $role->syncPermissions(['vista trabajador']);
+        //         break;
+        //     default:
+        // }
+
+
+        return redirect('/admin/permissions')->with('success', 'Permiso actualizado exitosamente!');
     }
 
 

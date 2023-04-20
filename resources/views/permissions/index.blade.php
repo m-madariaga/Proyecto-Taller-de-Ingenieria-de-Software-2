@@ -20,7 +20,7 @@
                     <td>{{ $permission->id }}</td>
                     <td>{{ $permission->name }}</td>
                     <td>
-                        <a href="{{route('roles.edit', $role->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i>
+                        <a href="{{route('permissions.edit', $permission->id)}}" class="btn btn-primary"><i class="fa fa-edit"></i>
                         </a>
                         <form action="{{ route('permissions.destroy', $permission->id) }}" method="POST" style="display: inline;">
                             @csrf

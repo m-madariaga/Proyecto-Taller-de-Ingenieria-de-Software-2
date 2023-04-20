@@ -37,6 +37,7 @@ Route::group(['middleware' => ['permission:vista admin'], 'prefix' => 'admin'], 
     Route::get('/permissions/create', [App\Http\Controllers\permissionController::class, 'create'])->name('permissions.create');
     Route::post('/permissions/store', [App\Http\Controllers\permissionController::class, 'store'])->name('permissions.store');
     Route::get('/permissions/{id}/edit', [App\Http\Controllers\permissionController::class, 'edit'])->name('permissions.edit');
+    Route::patch('/permissions/{id}', [App\Http\Controllers\permissionController::class, 'update'])->name('permissions.update');
     Route::delete('/permissions/{id}', [App\Http\Controllers\permissionController::class, 'destroy'])->name('permissions.destroy');
 });
 
