@@ -12,7 +12,6 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $primaryKey = 'run';
     use HasRoles;
 
     /**
@@ -43,9 +42,9 @@ class User extends Authenticatable
     }
 
 
-    public $incrementing = false;
+    //public $incrementing = false;
 
-    protected $keyType = 'bigint';
+    
 
     /**
      * The attributes that should be hidden for serialization.
