@@ -17,12 +17,12 @@ class CreateUsersTable extends Migration
             $table->id();
             $table->unsignedBigInteger('rut')->nullable();
             $table->string('name');
+            $table->unsignedBigInteger('run')->nullable();
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->integer('tipo_cuenta');
             $table->rememberToken();
-            $table->integer('tipo_de_cuenta')->nullable();
+
             $table->timestamps();
         });
     }

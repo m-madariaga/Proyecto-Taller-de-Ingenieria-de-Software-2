@@ -8,12 +8,13 @@
 
         <ul class="list-unstyled components">
             <li class="active">
-                <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+
+                <a href="{{ route('users.index') }}" data-toggle="collapse" aria-expanded="false" class="Button">
                     Usuario
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li>
-                        <a href="#">Ingreso datos Usuarios</a>
+                        <a href="{{ route('register') }}">Ingreso datos Usuarios</a>
                     </li>
                     <li>
                         <a href="#">Modificación datos Usuarios</a>
@@ -22,7 +23,7 @@
                         <a href="#">Eliminar datos Usuario</a>
                     </li>
                     <li>
-                        <a href="#">Listar Usuarios</a>
+                        <a href="#vaparalist_user">Listar Usuarios</a>
                     </li>
                 </ul>
             </li>
@@ -67,7 +68,7 @@
             </li>
             <li>
                 <a href="#actionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                   
+
                     Acciones
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -87,8 +88,8 @@
                     Consumo
                 </a>
             </li>
-        
-            
+
+
         </ul>
 
 
