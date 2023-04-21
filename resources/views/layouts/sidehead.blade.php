@@ -9,7 +9,7 @@
             </button>
         @else
             <a class="navbar-brand text-white" class="nav-link" id="sidebarCollapse" href="#">
-                <i class="fas fa-align-left"></i>
+                <i class="fa fa-bars" aria-hidden="true"></i>
             </a>
           
         @endguest

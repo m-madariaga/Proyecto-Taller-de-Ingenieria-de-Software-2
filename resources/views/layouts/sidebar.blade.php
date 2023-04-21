@@ -7,7 +7,10 @@
 
         <ul class="list-unstyled components">
             <li class="active">
+                
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
+                    
+                    <i class="fas fa-user" style="color: #fafcff;"></i>
                     Usuarios
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -30,11 +33,15 @@
             </li>
             <li>
                 <a href="#">
+                    <i class="fas fa-file-alt" aria-hidden="true"></i>
+                    <i class="fas fa-chart-bar" aria-hidden="true"></i>
                     Reporte
                 </a>
             </li>
             <li>
+                
                 <a href="#">
+                    <i class="fa fa-book" aria-hidden="true"></i>
                     Sección de API´S
                 </a>
             </li>
