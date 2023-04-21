@@ -1,5 +1,4 @@
 <div class="wrapper">
-    <!-- Sidebar  -->
     <nav id="sidebar">
         <div class="sidebar-header">
             <h3>Proyecto trabajo</h3>
@@ -19,11 +18,10 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="glyphicon glyphicon-briefcase"></i>
                     Generadores
                 </a>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                    <i class="glyphicon glyphicon-duplicate"></i>
+                    
                     Calderas
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -32,13 +30,11 @@
             </li>
             <li>
                 <a href="#">
-                    <i class="glyphicon glyphicon-link"></i>
                     Reporte
                 </a>
             </li>
             <li>
                 <a href="#">
-                    <i class="glyphicon glyphicon-paperclip"></i>
                     Sección de API´S
                 </a>
             </li>
