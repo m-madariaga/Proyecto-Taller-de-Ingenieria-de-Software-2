@@ -47,11 +47,13 @@
                 </main>
             </div>
         @endguest
+        
+    </div>
+    <div class="container-fluid">
         <main class="py-4">
             @yield('login')
         </main>
-    </div>
-
+        </div>
 
 </body>
 

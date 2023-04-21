@@ -11,7 +11,7 @@
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
                     
                     <i class="fas fa-user" style="color: #fafcff;"></i>
-                    Usuarios
+                    <b>Usuarios</b>
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
                     <li><a href="{{ route('users.index') }}">Lista Usuarios</a></li>
@@ -21,11 +21,10 @@
             </li>
             <li>
                 <a href="#">
-                    Generadores
+                    <b>Generadores</b>
                 </a>
                 <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false">
-                    
-                    Calderas
+                    <b>Calderas</b>
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
                     <li><a href="#">Pagina</a></li>
@@ -35,14 +34,14 @@
                 <a href="#">
                     <i class="fas fa-file-alt" aria-hidden="true"></i>
                     <i class="fas fa-chart-bar" aria-hidden="true"></i>
-                    Reporte
+                    <b>Reporte</b>
                 </a>
             </li>
             <li>
                 
                 <a href="#">
                     <i class="fa fa-book" aria-hidden="true"></i>
-                    Sección de API´S
+                    <b>Sección de API´S</b>
                 </a>
             </li>
         

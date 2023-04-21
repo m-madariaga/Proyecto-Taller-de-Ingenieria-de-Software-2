@@ -52,7 +52,7 @@ span {
 }
 
 /* ---------------------------------------------------
-    SIDEBAR STYLE
+    SIDEBAR STYLE aqui trabajo el estilo
 ----------------------------------------------------- */
 
 .wrapper {
@@ -73,6 +73,10 @@ span {
     min-width: 80px;
     max-width: 80px;
     text-align: center;
+}
+
+#sidebar.active b{
+    display: none;
 }
 
 #sidebar.active .sidebar-header h3,
@@ -228,6 +232,9 @@ a.article:hover {
     #sidebar.active {
         margin-left: 0 !important;
     }
+
+
+
     #sidebar .sidebar-header h3,
     #sidebar .CTAs {
         display: none;
