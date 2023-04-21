@@ -39,6 +39,14 @@ Route::group(['middleware' => ['permission:vista admin'], 'prefix' => 'admin'], 
     Route::get('/permissions/{id}/edit', [App\Http\Controllers\permissionController::class, 'edit'])->name('permissions.edit');
     Route::patch('/permissions/{id}', [App\Http\Controllers\permissionController::class, 'update'])->name('permissions.update');
     Route::delete('/permissions/{id}', [App\Http\Controllers\permissionController::class, 'destroy'])->name('permissions.destroy');
+    Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{id}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{id}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{id}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+
+
 });
 
 
@@ -61,10 +69,5 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 
 
-Route::get('/users', [App\Http\Controllers\UserController::class, 'index'])->name('users.index');
-Route::get('/users/create', [App\Http\Controllers\UserController::class, 'create'])->name('users.create');
-Route::post('/users', [App\Http\Controllers\UserController::class, 'store'])->name('users.store');
-Route::get('/users/{run}/edit', [App\Http\Controllers\UserController::class, 'edit'])->name('users.edit');
-Route::put('/users/{run}', [App\Http\Controllers\UserController::class, 'update'])->name('users.update');
-Route::delete('/users/{run}', [App\Http\Controllers\UserController::class, 'destroy'])->name('users.destroy');
+
 

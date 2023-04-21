@@ -9,7 +9,7 @@
         <ul class="list-unstyled components">
             <li class="active">
 
-                <a href="{{ route('register') }}" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
+                <a href="{{ route('users.index') }}" data-toggle="collapse" aria-expanded="false" class="Button">
                     Usuario
                 </a>
                 <ul class="collapse list-unstyled" id="homeSubmenu">
@@ -68,7 +68,7 @@
             </li>
             <li>
                 <a href="#actionSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">
-                   
+
                     Acciones
                 </a>
                 <ul class="collapse list-unstyled" id="pageSubmenu">
@@ -88,8 +88,8 @@
                     Consumo
                 </a>
             </li>
-        
-            
+
+
         </ul>
 
 
