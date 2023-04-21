@@ -89,7 +89,7 @@
                          @enderror
                      </div>
                      <div class="col-2"></div>
-                 </div>
+                </div>
 
 
 
@@ -103,5 +103,6 @@
             </form>
         </div>
     </div>
+
 </div>
 @endsection

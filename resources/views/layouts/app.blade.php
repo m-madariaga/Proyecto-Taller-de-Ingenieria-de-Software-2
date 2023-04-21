@@ -10,6 +10,7 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="{{ asset('js/app.js') }}" defer></script>
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <!-- Fonts -->

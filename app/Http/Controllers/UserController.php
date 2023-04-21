@@ -54,7 +54,7 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('/home')->with('success', 'Usuario creado exitosamente!');
+        return redirect('admin/users')->with('success', 'Usuario creado exitosamente!');
     }
 
     /**
@@ -102,7 +102,7 @@ class UserController extends Controller
         $user->tipo_de_cuenta = $request->get('tipo_de_cuenta');
         $user->save();
 
-        return redirect('/users')->with('success', 'Usuario actualizado exitosamente!');
+        return redirect('admin/users')->with('success', 'Usuario actualizado exitosamente!');
     }
 
     /**
@@ -116,7 +116,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('/home')->with('success', 'Usuario eliminado exitosamente!');
+        return redirect('admin/users')->with('success', 'Usuario eliminado exitosamente!');
 
     }
 }
