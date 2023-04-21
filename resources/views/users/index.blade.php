@@ -2,6 +2,26 @@
 
 @section('content')
 <div class="container">
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Exito',
+                text: '{{ session('success') }}',
+                timer: 3000
+            });
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}'
+            });
+        </script>
+    @endif
     <h1>Usuarios</h1>
     <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2">Agregar usuario</a>
     <table id="users-table" class="display" width="100%">
@@ -28,7 +48,7 @@
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-outline-danger">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Estas seguro de que deseas eliminar al usuario {{ $user->name }}')">Eliminar</button>
                         </form>
                     </td>
                 </tr>
