@@ -73,25 +73,6 @@
                     </div>
                 </div>
 
-                <div class="row mb-3">
-                    <div class="col-2"></div>
-                     <div class="col-8 md-6">
-                         <select class="form-select" name="tipo_de_cuenta" id="tipo_de_cuenta" value="{{ old('tipo_de_cuenta') }}">
-                             <option selected disabled>--- Rol Seleccionado ---</option>
-                             <option value="1">Administrador</option>
-                             <option value="2">Analista</option>
-                             <option value="3">Trabajador</option>
-                         </select>
-                         @error('tipo_de_cuenta')
-                             <span class="invalid-feedback" role="alert">
-                                 <strong>{{ $message }}</strong>
-                             </span>
-                         @enderror
-                     </div>
-                     <div class="col-2"></div>
-                </div>
-
-
 
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-4">

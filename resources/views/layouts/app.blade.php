@@ -18,7 +18,7 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.1.0/dist/sweetalert2.min.css">
     <!-- Our Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
     <!-- Font Awesome JS -->

@@ -40,8 +40,8 @@ class UserController extends Controller
             'run' => 'required|unique:users,run',
             'name' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required',
-            'tipo_de_cuenta' => 'required',
+            'password' => 'required|string|min:8',
+            'tipo_de_cuenta' => 'nullable',
         ]);
 
         $user = new User([
