@@ -93,9 +93,9 @@ span {
 }
 
 #sidebar.active ul li a {
-    padding: 20px 10px;
+    padding: 10px 10px;
     text-align: center;
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
 }
 
 #sidebar.active ul li a i {
@@ -125,7 +125,7 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #223367;
+    background: #0069A5;
 }
 
 #sidebar .sidebar-header strong {
