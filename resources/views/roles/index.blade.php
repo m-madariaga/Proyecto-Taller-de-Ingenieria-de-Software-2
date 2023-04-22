@@ -2,9 +2,29 @@
 
 @section('content')
 <div class="container">
+    @if(session('success'))
+        <script>
+            Swal.fire({
+                icon: 'success',
+                title: 'Exito',
+                text: '{{ session('success') }}',
+                timer: 3000
+            });
+        </script>
+    @endif
+
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}'
+            });
+        </script>
+    @endif
     <h1>Roles</h1>
-    <a href="{{ route('roles.create') }}" class="btn btn-success mb-2"><i class="fa fa-plus"></i></a>
-    <table id="roles-table" class="display" width="100%">
+    <a href="{{ route('roles.create') }}" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-plus"></i></a>
+    <table id="users-table" class="display" width="100%">
         <thead>
             <tr>
                 <th>Id</th>
@@ -20,15 +40,13 @@
                     <td>{{ $role->id }}</td>
                     <td>{{ $role->name }}</td>
                     <td>{{ $role->role_type }}</td>
-                    <td>{{ $role->role_count }}</td>
+                    <td>{{ $role->role_count}}</td>
                     <td>
-                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-primary"><i class="fa fa-edit"></i>
-                        </a>
+                        <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i></a>
                         <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-danger"><i class="fa fa-trash" aria-hidden="true"></i>
-                            </button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Estas seguro de que deseas eliminar el rol {{ $role->name }} ?')"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </form>
                     </td>
                 </tr>
@@ -36,7 +54,6 @@
         </tbody>
     </table>
 </div>
-@endsection
 
 <script src='https://code.jquery.com/jquery-3.5.1.js'></script>
 <script src='https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js'></script>
@@ -47,7 +64,7 @@
 <script src='https://cdn.datatables.net/fixedcolumns/4.2.2/js/dataTables.fixedColumns.min.js'></script>
 <script>
     $(document).ready(function () {
-        $('#roles-table').DataTable({
+        $('#users-table').DataTable({
             dom: 'lfrtip',
             scrollX: true,
             scrollCollapse: true,
@@ -55,11 +72,10 @@
             responsive: true,
             colReorder: true,
             fixedColumns: false,
-            "searching": false
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
             },
-
         });
     });
 </script>
+@endsection
