@@ -48,8 +48,49 @@
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-outline-danger" onclick="return confirm('Estas seguro de que deseas eliminar al usuario {{ $user->name }}')">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger delete-user" data-id="{{ $user->id }}">Eliminar</button>
                         </form>
+                        <script>
+                            $(document).on('click', '.delete-user', function(e) {
+                                e.preventDefault();
+                                var id = $(this).data('id');
+                                Swal.fire({
+                                    title: '¿Estás seguro?',
+                                    text: "¡No podrás revertir esto!",
+                                    icon: 'warning',
+                                    showCancelButton: true,
+                                    confirmButtonColor: '#3085d6',
+                                    cancelButtonColor: '#d33',
+                                    confirmButtonText: '¡Sí, bórralo!',
+                                    cancelButtonText: 'Cancelar'
+                                }).then((result) => {
+                                    if (result.isConfirmed) {
+                                        $.ajax({
+                                            type: 'DELETE',
+                                            url: '/admin/users/' + id,
+                                            data: {
+                                                id: id,
+                                                _token: $('meta[name="csrf-token"]').attr('content')
+                                            },
+                                            success: function(data) {
+                                                Swal.fire({
+                                                    icon: 'success',
+                                                    title: 'Exito',
+                                                    text: '¡Usuario eliminado correctamente!',
+                                                    timer: 1100
+                                                });
+                                                setTimeout(function() {
+                                                    location.reload();
+                                                }, 1100); // delay for half a second
+                                            },
+                                            error: function(xhr, status, error) {
+                                                console.log(xhr.responseText);
+                                            }
+                                        });
+                                    }
+                                });
+                            });
+                        </script>
                     </td>
                 </tr>
             @endforeach

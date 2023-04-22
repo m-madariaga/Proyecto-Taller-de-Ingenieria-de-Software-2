@@ -116,7 +116,7 @@ class UserController extends Controller
         $user = User::find($id);
         $user->delete();
 
-        return redirect('admin/users')->with('success', 'Usuario eliminado exitosamente!');
+        return response()->json(['success' => true]);
 
     }
 }
