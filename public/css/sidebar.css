@@ -2,10 +2,11 @@
     DEMO STYLE
 */
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 body {
     font-family: 'Montserrat', sans-serif;
     background: #fafafa;
+    
 }
 
 p {
@@ -49,6 +50,12 @@ a:focus {
 i,
 span {
     display: inline-block;
+}
+
+
+p[ id="user_name"]{
+    padding-left: 1em;
+    margin-top: 0.5em;
 }
 
 /* ---------------------------------------------------
@@ -164,11 +171,12 @@ a[data-toggle="collapse"] {
 }
 
 .dropdown-toggle::after {
-    display: block;
+    display: none;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 10px;
     transform: translateY(-50%);
+
 }
 
 ul ul a {
