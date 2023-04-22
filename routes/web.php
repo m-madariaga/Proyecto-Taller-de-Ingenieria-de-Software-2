@@ -5,6 +5,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Controller\UserController;
 use App\Http\Controllers\Controller\roleController;
 use App\Http\Controllers\Controller\permissionController;
+use Illuminate\Support\Facades\Auth;
 
 /*
 |--------------------------------------------------------------------------
