@@ -40,7 +40,7 @@ class UserController extends Controller
             'run' => 'required|unique:users,run',
             'name' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
             'tipo_de_cuenta' => 'nullable',
         ]);
 
