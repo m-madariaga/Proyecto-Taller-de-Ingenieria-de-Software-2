@@ -10,7 +10,7 @@
     <div class="d-flex justify-content-center h-100">
         <div class="card">
             <div class="card-header">
-                <h3>Sign In</h3>
+                <h3>Inicio Sesión</h3>
 
             </div>
             <div class="card-body">
@@ -21,7 +21,7 @@
                     <div class="row mb-3">
                         <div class="input-group form-group col-md-6">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-user"></i></span>
+                                <span class="input-group-text"><i class="fas fa-user" style="color: #ffffff;"></i></span>
                             </div>
                             <input id="email" type="email" placeholder="Correo Electrónico" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
                             @error('email')
@@ -35,19 +35,13 @@
                     <div class="row mb-3">
                         <div class="input-group form-group col-md-6">
                             <div class="input-group-prepend">
-                                <span class="input-group-text"><i class="fas fa-key"></i></span>
+                                <span class="input-group-text"><i class="fas fa-key " style="color: #ffffff;"></i></span>
                             </div>
                             <input id="password" type="password" placeholder="Contraseña" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
 
                         </div>
-                        <div class="row align-items-center remember col-md-6 offset-md-4">
-                            <div class="form-check">
-                                <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-
-                                <label class="form-check-label" for="remember">
-                                    {{ __('Recordarme') }}
-                                </label>
-                            </div>
+                        <div class="row align-items-center remember col-md-6">
+                            <input type="checkbox">Recordarme
                         </div>
 
                     </div>
