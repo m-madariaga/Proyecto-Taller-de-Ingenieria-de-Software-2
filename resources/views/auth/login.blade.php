@@ -70,7 +70,6 @@
 
                                                 </div>
                                             </div>
-
                                             <div class="card-footer">
                                                 <div class="d-flex justify-content-center">
                                                     @if (Route::has('password.request'))
