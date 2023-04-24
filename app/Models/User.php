@@ -12,6 +12,7 @@ use Spatie\Permission\Traits\HasRoles;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
+    //protected $primaryKey = 'run';
     use HasRoles;
 
     /**
@@ -20,11 +21,11 @@ class User extends Authenticatable
      * @var array<int, string>
      */
     protected $fillable = [
-        'run',
         'name',
+        'run',
         'email',
         'password',
-        'tipo_cuenta',
+        'tipo_de_cuenta',
     ];
 
     public function getTipoDeCuenta($value)
@@ -44,7 +45,7 @@ class User extends Authenticatable
 
     //public $incrementing = false;
 
-    
+
 
     /**
      * The attributes that should be hidden for serialization.

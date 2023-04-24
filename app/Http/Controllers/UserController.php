@@ -40,7 +40,7 @@ class UserController extends Controller
             'run' => 'required|unique:users,run',
             'name' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required',
+            'password' => 'required|string|min:8',
             'tipo_de_cuenta' => 'nullable',
         ]);
 
@@ -54,13 +54,13 @@ class UserController extends Controller
 
         $user->save();
 
-        return redirect('/users')->with('success', 'Usuario creado exitosamente!');
+        return redirect('admin/users')->with('success', 'Usuario creado exitosamente!');
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  int  $run
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,12 +71,12 @@ class UserController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  int  $run
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit($run)
+    public function edit($id)
     {
-        $user = User::find($run);
+        $user = User::find($id);
 
         return view('users.edit', compact('user'));
     }
@@ -85,10 +85,10 @@ class UserController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  int  $run
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $run)
+    public function update(Request $request, $id)
     {
         $request->validate([
             'name' => 'required',
@@ -96,27 +96,27 @@ class UserController extends Controller
             'tipo_de_cuenta' => 'nullable',
         ]);
 
-        $user = User::find($run);
+        $user = User::find($id);
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->tipo_de_cuenta = $request->get('tipo_de_cuenta');
         $user->save();
 
-        return redirect('/users')->with('success', 'Usuario actualizado exitosamente!');
+        return redirect('admin/users')->with('success', 'Usuario actualizado exitosamente!');
     }
 
     /**
      * Remove the specified resource from storage.
      *
-     * @param  int  $run
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($run)
+    public function destroy($id)
     {
-        $user = User::find($run);
+        $user = User::find($id);
         $user->delete();
 
-        return redirect('/users')->with('success', 'Usuario eliminado exitosamente!');
+        return response()->json(['success' => true]);
 
     }
 }

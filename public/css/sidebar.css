@@ -2,14 +2,17 @@
     DEMO STYLE
 */
 
-@import "https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700";
+@import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 body {
-    font-family: 'Poppins', sans-serif;
-    background: #fafafa;
+    font-family: 'Montserrat', sans-serif;
+    background-image: url("https://www.ringtina.com.ar/Descargar/Fondos%20de%20Pantalla/Abstractos/ImgAbstractos%20032.jpg");
+
+    
 }
 
+
 p {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Montserrat', sans-serif;
     font-size: 1.1em;
     font-weight: 300;
     line-height: 1.7em;
@@ -51,8 +54,14 @@ span {
     display: inline-block;
 }
 
+
+p[ id="user_name"]{
+    padding-left: 1em;
+    margin-top: 0.5em;
+}
+
 /* ---------------------------------------------------
-    SIDEBAR STYLE
+    SIDEBAR STYLE aqui trabajo el estilo
 ----------------------------------------------------- */
 
 .wrapper {
@@ -75,6 +84,10 @@ span {
     text-align: center;
 }
 
+#sidebar.active b{
+    display: none;
+}
+
 #sidebar.active .sidebar-header h3,
 #sidebar.active .CTAs {
     display: none;
@@ -89,9 +102,9 @@ span {
 }
 
 #sidebar.active ul li a {
-    padding: 20px 10px;
+    padding: 10px 10px;
     text-align: center;
-    font-size: 0.85em;
+    /*font-size: 0.85em;*/
 }
 
 #sidebar.active ul li a i {
@@ -121,7 +134,7 @@ span {
 
 #sidebar .sidebar-header {
     padding: 20px;
-    background: #223367;
+    background: #0069A5;
 }
 
 #sidebar .sidebar-header strong {
@@ -160,17 +173,18 @@ a[data-toggle="collapse"] {
 }
 
 .dropdown-toggle::after {
-    display: block;
+    display: none;
     position: absolute;
     top: 50%;
-    right: 20px;
+    right: 10px;
     transform: translateY(-50%);
+
 }
 
 ul ul a {
     font-size: 0.9em !important;
     padding-left: 30px !important;
-    background: #6d7fcc;
+    background:#0069A5;
 }
 
 ul.CTAs {
@@ -204,6 +218,7 @@ a.article:hover {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
+    background-color: white;
 }
 
 /* ---------------------------------------------------
@@ -228,6 +243,9 @@ a.article:hover {
     #sidebar.active {
         margin-left: 0 !important;
     }
+
+
+
     #sidebar .sidebar-header h3,
     #sidebar .CTAs {
         display: none;
