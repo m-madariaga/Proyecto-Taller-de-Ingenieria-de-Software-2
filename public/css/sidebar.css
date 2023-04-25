@@ -5,9 +5,11 @@
 @import "https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700";
 body {
     font-family: 'Montserrat', sans-serif;
-    background: #fafafa;
+    background-image: url("https://www.ringtina.com.ar/Descargar/Fondos%20de%20Pantalla/Abstractos/ImgAbstractos%20032.jpg");
+
     
 }
+
 
 p {
     font-family: 'Montserrat', sans-serif;
@@ -216,6 +218,7 @@ a.article:hover {
     width: 100%;
     min-height: 100vh;
     transition: all 0.3s;
+    background-color: white;
 }
 
 /* ---------------------------------------------------
