@@ -15,6 +15,17 @@ class UserController extends Controller
     {
         $users = User::all();
 
+        foreach($users as $user){
+            $roles = $user->getRoleNames();
+
+            if($roles->isEmpty()){
+                $user->role = "Ninguno";
+            }else{
+                $user->role = $roles->implode("");
+            }
+
+        }
+
         return view('users.index', compact('users'));
     }
 
@@ -40,7 +51,7 @@ class UserController extends Controller
             'run' => 'required|unique:users,run',
             'name' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
             'tipo_de_cuenta' => 'nullable',
         ]);
 

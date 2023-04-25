@@ -13,10 +13,10 @@ class permissionController extends Controller
         $permissions = Permission::all();
 
         // foreach($permissions as $permission){
-            
+
         //     $user_amount = User::role($role->name)->get();
         //     $role->role_count= $user_amount->count();
-            
+
         // }
 
 

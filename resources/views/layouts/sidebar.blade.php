@@ -24,7 +24,7 @@
                     <li><a href="#">Permisos</a></li>
                 </ul>
             </li>
-           
+
             <li>
                 <a href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false">
 
