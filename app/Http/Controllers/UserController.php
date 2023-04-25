@@ -93,8 +93,11 @@ class UserController extends Controller
     public function edit($id)
     {
         $user = User::find($id);
+        $roles= Role::all()->pluck('name');
+        $role_get = $user->getRoleNames();
+        $current_role = $role_get->implode("");
 
-        return view('users.edit', compact('user'));
+        return view('users.edit', compact('user', 'roles', 'current_role'));
     }
 
     /**
@@ -110,6 +113,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required',
             'tipo_de_cuenta' => 'nullable',
+            'role' => 'nullable',
         ]);
 
         $user = User::find($id);
@@ -117,6 +121,7 @@ class UserController extends Controller
         $user->email = $request->get('email');
         $user->tipo_de_cuenta = $request->get('tipo_de_cuenta');
         $user->save();
+        $user->syncRoles([$request->role]);
 
         return redirect('admin/users')->with('success', 'Usuario actualizado exitosamente!');
     }
