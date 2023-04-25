@@ -177,11 +177,11 @@ input:focus {
 
 }
 
-img[id="logo"] {
+img[id="logo_ini"] {
     vertical-align: middle;
     border-style: none;
-    width: 200px;
-    height: 60px;
+    width: 140px;
+    height: 40px;
 }
 
 .remember input {
