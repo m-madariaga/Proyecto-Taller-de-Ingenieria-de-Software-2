@@ -107,7 +107,7 @@ class permissionController extends Controller
         $permission = Permission::find($id);
         $permission->delete();
 
-        return redirect('/admin/permissions')->with('success', 'Permiso eliminado exitosamente!');
+        return response()->json(['success' => true]);
 
     }
 }

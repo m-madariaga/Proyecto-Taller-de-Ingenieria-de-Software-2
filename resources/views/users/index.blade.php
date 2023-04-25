@@ -23,14 +23,14 @@
         </script>
     @endif
     <h1>Usuarios</h1>
-    <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2">Agregar usuario</a>
+    <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-plus"></i></a>
     <table id="users-table" class="display" width="100%">
         <thead>
             <tr>
                 <th>Run</th>
                 <th>Nombre</th>
                 <th>Email</th>
-                <th>Tipo de cuenta</th>
+                <th>Rol</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -41,14 +41,14 @@
                     <td>{{ $user->name }}</td>
                     <td>{{ $user->email }}</td>
                     <td>
-                        {{ $user->getTipoDeCuenta($user->tipo_de_cuenta)}}
+                        {{ $user->role}}
                     </td>
                     <td>
-                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
+                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i></a>
                         <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
                             @csrf
                             @method('DELETE')
-                            <button type="submit" class="btn btn-sm btn-outline-danger delete-user" data-id="{{ $user->id }}">Eliminar</button>
+                            <button type="submit" class="btn btn-sm btn-outline-danger delete-user" data-id="{{ $user->id }}"><i class="fa fa-trash" aria-hidden="true"></i></button>
                         </form>
                         <script>
                             $(document).on('click', '.delete-user', function(e) {
@@ -121,6 +121,4 @@
         });
     </script>
 </div>
-
-
 @endsection
