@@ -2,8 +2,8 @@
 
 @section('content')
 <div class="signup-form">
-    <div class="card">
-        <div class="card-header">{{ __('Registrar') }}</div>
+    <div class="container-fluid" id="container-register">
+        <div class="card-header mb-4" id="card-register">{{ __('Registrar') }}</div>
 
         <div class="card-body">
             <form method="POST" action="{{ route('users.store') }}">
