@@ -53,7 +53,7 @@
             responsive: true,
             colReorder: true,
             fixedColumns: false,
-            "searching": false
+            "searching": false,
             language: {
                 url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
             },
