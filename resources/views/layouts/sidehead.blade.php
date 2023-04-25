@@ -6,21 +6,15 @@
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                
-         
-                
             @else
                 <a class="navbar-brand text-white" class="nav-link" id="sidebarCollapse" href="#">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </a>
-                <div class="row justify-content-center ">
-             
-                   <button style="">
-                    <img src="{{ asset('images/logo.png') }}"
-                    title="Landes" alt="Landes" id="logo_ini">
-                   </button>
-             
-                </div>
+                <a href="" class="navbar-brand has-logo" id="yui_3_17_2_1_1682450189389_40">
+                    <span class="logo d-none d-sm-inline" id="yui_3_17_2_1_1682450189389_39">
+                        <img src="{{ asset('images/logo.png') }}" title="Landes" alt="Landes" id="logo_ini">
+                    </span>
+                </a>
 
             @endguest
 
@@ -83,6 +77,6 @@
                 </li>
             @endguest
         </ul>
-        
+
     </div>
 </nav>
