@@ -37,6 +37,8 @@
                     <th>Nombre</th>
                     <th>Email</th>
                     <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Visto por ultima vez</th>
                     <th>Acciones</th>
                 </tr>
             </thead>
@@ -47,8 +49,16 @@
                         <td>{{ $user->name }}</td>
                         <td>{{ $user->email }}</td>
                         <td>
-                            {{ $user->role}}
+                            {{ $user->role }}
                         </td>
+                        <td>
+                            @if (Cache::has('is_online' . $user->id))
+                                <span class="text-success">En linea</span>
+                            @else
+                                <span class="text-secondary">Desconectado</span>
+                            @endif
+                        </td>
+                        <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H') }}</td>
                         <td>
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
