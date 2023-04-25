@@ -15,21 +15,21 @@
         <table id="roles-table" class="table table-striped" width="100%">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
-                    <th>Tipo de rol</th>
-                    <th>Cantidad de usuarios</th>
-                    <th>Acciones</th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nombre</th>
+                    <th class="text-center">Tipo de rol</th>
+                    <th class="text-center">Cantidad de usuarios</th>
+                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($roles as $role)
                     <tr>
-                        <td>{{ $role->id }}</td>
-                        <td>{{ $role->name }}</td>
-                        <td>{{ $role->role_type }}</td>
-                        <td>{{ $role->role_count }}</td>
-                        <td>
+                        <td class="text-center">{{ $role->id }}</td>
+                        <td class="text-center">{{ $role->name }}</td>
+                        <td class="text-center">{{ $role->role_type }}</td>
+                        <td class="text-center">{{ $role->role_count }}</td>
+                        <td class="text-center">
                             <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
                             </a>
                             <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display: inline;">

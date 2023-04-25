@@ -30,20 +30,21 @@
         <table id="permissions-table" class="table table-striped" width="100%">
             <thead>
                 <tr>
-                    <th>Id</th>
-                    <th>Nombre</th>
+                    <th class="text-center">Id</th>
+                    <th class="text-center">Nombre</th>
                     <!-- <th>Tipo de rol</th>
-                    <th>Cantidad de usuarios</th> -->
-                    <th>Acciones</th>
+                        <th>Cantidad de usuarios</th> -->
+                    <th class="text-center">Acciones</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($permissions as $permission)
                     <tr>
-                        <td>{{ $permission->id }}</td>
-                        <td>{{ $permission->name }}</td>
-                        <td>
-                            <a href="{{ route('permissions.edit', $permission->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
+                        <td class="text-center">{{ $permission->id }}</td>
+                        <td class="text-center">{{ $permission->name }}</td>
+                        <td class="text-center">
+                            <a href="{{ route('permissions.edit', $permission->id) }}"
+                                class="btn btn-sm btn-outline-primary">Editar</a>
                             </a>
                             <form action="{{ route('permissions.destroy', $permission->id) }}" method="POST"
                                 style="display: inline;">
@@ -73,7 +74,19 @@
         $(document).ready(function() {
             $('#permissions-table').DataTable({
                 dom: 'lfrtip',
-
+                "columnDefs": [{
+                        "width": "33%",
+                        "targets": 0 // set width for the first column
+                    },
+                    {
+                        "width": "33%",
+                        "targets": 1 // set width for the second column
+                    },
+                    {
+                        "width": "33%",
+                        "targets": 2 // set width for the third column
+                    }
+                ],
                 language: {
                     url: '//cdn.datatables.net/plug-ins/1.10.25/i18n/Spanish.json'
                 },
