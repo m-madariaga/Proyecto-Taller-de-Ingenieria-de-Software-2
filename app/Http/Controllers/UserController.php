@@ -25,7 +25,7 @@ class UserController extends Controller
             }else{
                 $user->role = $roles->implode("");
             }
-            
+
         }
 
         return view('users.index', compact('users'));

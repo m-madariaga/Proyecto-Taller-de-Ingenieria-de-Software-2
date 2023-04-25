@@ -40,22 +40,42 @@
         <tbody>
             @foreach($users as $user)
                 <tr>
-                    <td>{{ $user->run }}</td>
-                    <td>{{ $user->name }}</td>
-                    <td>{{ $user->email }}</td>
-                    <td>
-                        {{ $user->role}}
-                    </td>
-                    <td>
-                        <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i></a>
-                        <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
-                            @csrf
-                            @method('DELETE')
-                            <button type="button" class="btn btn-sm btn-outline-danger delete-user" data-id="{{ $user->id }}"><i class="fa fa-trash" aria-hidden="true"></i></button>
-                        </form>
-
-                    </td>
+                    <th>Run</th>
+                    <th>Nombre</th>
+                    <th>Email</th>
+                    <th>Rol</th>
+                    <th>Estado</th>
+                    <th>Visto por ultima vez</th>
+                    <th>Acciones</th>
                 </tr>
+            </thead>
+            <tbody>
+                @foreach ($users as $user)
+                    <tr>
+                        <td>{{ $user->run }}</td>
+                        <td>{{ $user->name }}</td>
+                        <td>{{ $user->email }}</td>
+                        <td>
+                            {{ $user->role }}
+                        </td>
+                        <td>
+                            @if (Cache::has('is_online' . $user->id))
+                                <span class="text-success">En linea</span>
+                            @else
+                                <span class="text-secondary">Desconectado</span>
+                            @endif
+                        </td>
+                        <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H') }}</td>
+                        <td>
+                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
+                            <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
+                                @csrf
+                                @method('DELETE')
+                                <button type="button" class="btn btn-sm btn-outline-danger delete-user"
+                                    data-id="{{ $user->id }}">Eliminar</button>
+                            </form>
+                        </td>
+                    </tr>
                 @endforeach
             </tbody>
         </table>
