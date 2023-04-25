@@ -15,6 +15,17 @@ class UserController extends Controller
     {
         $users = User::all();
 
+        foreach($users as $user){
+            $roles = $user->getRoleNames();
+
+            if($roles->isEmpty()){
+                $user->role = "Ninguno";
+            }else{
+                $user->role = $roles->implode("");
+            }
+
+        }
+
         return view('users.index', compact('users'));
     }
 
