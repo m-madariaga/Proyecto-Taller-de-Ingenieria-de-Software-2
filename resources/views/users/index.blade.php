@@ -5,33 +5,40 @@
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
 @endsection
 
+    @if (session('success'))
+    <script>
+        Swal.fire({
+            icon: 'success',
+            title: 'Exito',
+            text: '{{ session('success') }}',
+            timer: 3000
+        });
+    </script>
+    @endif
 
-@section('content')
-    <div class="container">
-        @if (session('success'))
-            <script>
-                Swal.fire({
-                    icon: 'success',
-                    title: 'Exito',
-                    text: '{{ session('success') }}',
-                    timer: 3000
-                });
-            </script>
-        @endif
-
-        @if (session('error'))
-            <script>
-                Swal.fire({
-                    icon: 'error',
-                    title: 'Error',
-                    text: '{{ session('error') }}'
-                });
-            </script>
-        @endif
-        <h1>Usuarios</h1>
-        <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2">Agregar usuario</a>
-        <table id="users-table" class=" table-striped table" width="100%">
-            <thead>
+    @if(session('error'))
+        <script>
+            Swal.fire({
+                icon: 'error',
+                title: 'Error',
+                text: '{{ session('error') }}'
+            });
+        </script>
+    @endif
+    <h1>Usuarios</h1>
+    <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-plus"></i></a>
+    <table id="users-table" class="display" width="100%">
+        <thead>
+            <tr>
+                <th>Run</th>
+                <th>Nombre</th>
+                <th>Email</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach($users as $user)
                 <tr>
                     <th>Run</th>
                     <th>Nombre</th>
@@ -82,10 +89,6 @@
 
     <script src="https://cdn.datatables.net/1.13.4/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.13.4/js/dataTables.bootstrap5.min.js"></script>
-
-
-
-
     <script>
         $(document).ready(function() {
             $('#users-table').DataTable({
