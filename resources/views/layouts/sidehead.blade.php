@@ -6,12 +6,24 @@
                     aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                
+         
+                
             @else
                 <a class="navbar-brand text-white" class="nav-link" id="sidebarCollapse" href="#">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </a>
+                <div class="row justify-content-center ">
+             
+                   <button style="">
+                    <img src="{{ asset('images/logo.png') }}"
+                    title="Landes" alt="Landes" id="logo_ini">
+                   </button>
+             
+                </div>
 
             @endguest
+
         </ul>
         <ul class="navbar-nav ms-auto">
             <!-- Authentication Links -->
