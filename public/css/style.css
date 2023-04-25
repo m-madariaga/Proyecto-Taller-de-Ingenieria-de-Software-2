@@ -138,13 +138,13 @@
         margin-top: auto;
         margin-bottom: auto;
         width: 400px;
-        background-color: #fff;  !important;
+        background-color: #fff; 
         }
         
         
         
         .card-header h3{
-        color: #0069a5#;
+        color: #0069a5;
         }
         
         .input-group-prepend span{
@@ -166,11 +166,11 @@
         
         }
         
-        img[id="logo"]{
+        img[id="logo_ini"]{
             vertical-align: middle;
             border-style: none;
-            width: 200px; 
-            height: 60px;
+            width: 150px; 
+            height: 40px;
         }
         .remember input
         {
@@ -200,3 +200,4 @@
         margin-left: 4px;
         color: #223367;
         }
+        
