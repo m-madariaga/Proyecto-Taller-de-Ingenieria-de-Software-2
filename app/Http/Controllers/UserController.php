@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use Spatie\Permission\Models\Role;
+
 class UserController extends Controller
 {
     /**
@@ -15,6 +17,17 @@ class UserController extends Controller
     {
         $users = User::all();
 
+        foreach($users as $user){
+            $roles = $user->getRoleNames();
+
+            if($roles->isEmpty()){
+                $user->role = "Ninguno";
+            }else{
+                $user->role = $roles->implode("");
+            }
+            
+        }
+
         return view('users.index', compact('users'));
     }
 
@@ -25,7 +38,8 @@ class UserController extends Controller
      */
     public function create()
     {
-        return view('users.create');
+        $roles= Role::all()->pluck('name');
+        return view('users.create', compact('roles'));
     }
 
     /**
@@ -42,6 +56,7 @@ class UserController extends Controller
             'email' => 'required|unique:users,email',
             'password' => 'required|string|min:8',
             'tipo_de_cuenta' => 'nullable',
+            'role' => 'nullable',
         ]);
 
         $user = new User([
@@ -53,6 +68,7 @@ class UserController extends Controller
         ]);
 
         $user->save();
+        $user->assignRole($request->role);
 
         return redirect('admin/users')->with('success', 'Usuario creado exitosamente!');
     }
