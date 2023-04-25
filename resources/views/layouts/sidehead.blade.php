@@ -10,6 +10,11 @@
                 <a class="navbar-brand text-white" class="nav-link" id="sidebarCollapse" href="#">
                     <i class="fa fa-bars" aria-hidden="true"></i>
                 </a>
+                <a href="" class="navbar-brand has-logo" id="yui_3_17_2_1_1682450189389_40">
+                    <span class="logo d-none d-sm-inline" id="yui_3_17_2_1_1682450189389_39">
+                        <img src="{{ asset('images/logo.png') }}" title="Landes" alt="Landes" id="logo_ini">
+                    </span>
+                </a>
 
             @endguest
         </ul>
@@ -71,6 +76,6 @@
                 </li>
             @endguest
         </ul>
-        
+
     </div>
 </nav>
