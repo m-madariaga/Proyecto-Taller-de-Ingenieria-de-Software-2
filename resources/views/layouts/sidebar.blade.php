@@ -20,11 +20,11 @@
                 </a>
                 <ul class="collapse list-unstyled" id="userSubmenu">
                     <li><a href="{{ route('users.index') }}">Listar Usuarios</a></li>
-                    <li><a href="#">Roles</a></li>
-                    <li><a href="#">Permisos</a></li>
+                    <li><a href="{{ route('roles.index') }}">Roles</a></li>
+                    <li><a href="{{ route('permissions.index') }}">Permisos</a></li>
                 </ul>
             </li>
-           
+
             <li style="{{ request()->is('admin/*') ? '' : 'display:none' }}">
                 <a href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false">
 
