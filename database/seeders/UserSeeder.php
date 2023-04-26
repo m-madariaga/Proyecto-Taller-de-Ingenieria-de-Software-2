@@ -27,7 +27,7 @@ class UserSeeder extends Seeder
         $role3->givePermissionTo($permission3);
 
         $user = new User();
-            $user->run              = 1;
+            $user->run              = 18456852;
             $user->name             = 'admin demo';
             $user->email            = 'admin@test.cl';
             $user->password         = bcrypt('asdf1234');
@@ -37,17 +37,17 @@ class UserSeeder extends Seeder
         $user->assignRole($role1);
 
         $user = new User();
-            $user->run              = 2;
+            $user->run              = 20214563;
             $user->name             = 'analista demo';
             $user->email            = 'analista@test.cl';
             $user->password         = bcrypt('asdf1234');
             $user->image            = 'analyst_profile.png';
-            $user->tipo_de_cuenta   = 2;
+            $user->tipo_de_cuenta   = 19816987;
         $user->save();
         $user->assignRole($role2);
 
         $user = new User();
-            $user->run              = 3;
+            $user->run              = 12235412;
             $user->name             = 'trabajador demo';
             $user->email            = 'trabajador@test.cl';
             $user->password         = bcrypt('asdf1234');
