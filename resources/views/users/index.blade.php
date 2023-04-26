@@ -29,7 +29,7 @@
             </script>
         @endif
         <h1>Usuarios</h1>
-        <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2">Agregar usuario</a>
+        <a href="{{ route('users.create') }}" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-plus"></a>
         <table id="users-table" class=" table-striped table" width="100%">
             <thead>
                 <tr>
@@ -60,12 +60,12 @@
                         </td>
                         <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H:m') }}</td>
                         <td>
-                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
+                            <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
                                 @csrf
                                 @method('DELETE')
                                 <button type="button" class="btn btn-sm btn-outline-danger delete-user"
-                                    data-id="{{ $user->id }}">Eliminar</button>
+                                    data-id="{{ $user->id }}"><i class="fa fa-trash" aria-hidden="true"></i></button>
                             </form>
                         </td>
                     </tr>
