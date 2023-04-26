@@ -24,7 +24,7 @@
                     <li><a href="{{ route('permissions.index') }}">Permisos</a></li>
                 </ul>
             </li>
-           
+
             <li style="{{ request()->is('admin/*') ? '' : 'display:none' }}">
                 <a href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false">
 
