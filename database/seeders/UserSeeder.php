@@ -37,12 +37,12 @@ class UserSeeder extends Seeder
         $user->assignRole($role1);
 
         $user = new User();
-            $user->run              = 20214563;
+            $user->run              = '20214563-1';
             $user->name             = 'analista demo';
             $user->email            = 'analista@test.cl';
             $user->password         = bcrypt('asdf1234');
             $user->image            = 'analyst_profile.png';
-            $user->tipo_de_cuenta   = '19816987-1';
+            $user->tipo_de_cuenta   = 2;
         $user->save();
         $user->assignRole($role2);
 
