@@ -29,7 +29,7 @@
             <li class="nav-item dropdown">
                 <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
                     <div class="photo">
-                        <i class="fas fa-user fa-lg" aria-hidden="true"></i>
+                        <img src="/imagen/{{ Auth::user()->image }} " width="10%">
                     </div>
 
                 </a>

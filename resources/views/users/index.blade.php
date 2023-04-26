@@ -41,7 +41,7 @@
                 <th>Rol</th>
                 <th>Estado</th>
                 <th>Visto por ultima vez</th>
-                <th>Imagen</th>
+                <th class="text-center">Imagen</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -61,9 +61,12 @@
                     <span class="text-secondary">Desconectado</span>
                     @endif
                 </td>
-                <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H:m') }}</td>
+                <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H') }}hrs</td>
                 <td>
-                    <img src="/imagen/{{$user->image}}" width="40%">
+                    <div class="container d-flex justify-content-center">
+                        <img src="/imagen/{{$user->image}}" width="10%">
+                    </div>
+
                 </td>
                 <td>
                     <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i></a>
