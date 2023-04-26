@@ -11,7 +11,7 @@
     <div class="container">
 
         <h1>Roles</h1>
-        <a href="{{ route('roles.create') }}" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-plus"></a>
+        <a href="{{ route('roles.create') }}" class="btn btn-sm btn-outline-success mb-2"><i class="fa fa-plus"></i></a>
         <table id="roles-table" class="table table-striped" width="100%">
             <thead>
                 <tr>
@@ -30,7 +30,7 @@
                         <td class="text-center">{{ $role->role_type }}</td>
                         <td class="text-center">{{ $role->role_count }}</td>
                         <td class="text-center">
-                            <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></a>
+                            <a href="{{ route('roles.edit', $role->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i></a>
                             </a>
                             <form action="{{ route('roles.destroy', $role->id) }}" method="POST" style="display: inline;">
                                 @csrf
