@@ -10,10 +10,11 @@
                     @csrf
 
                     <div class="row mb-3">
-                        <label for="run" class="col-md-4 col-form-label text-md-end">{{ __('RUN') }}</label>
+                        <label for="run"
+                            class="col-md-4 col-form-label text-md-end">{{ __('RUN (11111111-1)') }}</label>
 
                         <div class="col-md-6">
-                            <input id="run" type="number" class="form-control @error('run') is-invalid @enderror"
+                            <input id="run" type="text" class="form-control @error('run') is-invalid @enderror"
                                 name="run" value="{{ old('run') }}" required autocomplete="run" autofocus>
 
                             @error('run')
@@ -72,14 +73,24 @@
                         </div>
                     </div>
                     <!-- PARA VISUALIZAR LA IMAGEN -->
-                    <div class="row mb-3">
-                        <img id="imagenSeleccionada" style="max-height: 300px;">
-                    </div>
-                    <!-- input img -->
-                    <div class="row mb-3">
-                        <input name="image" id="image" type="file">
+                    <div class="container border">
+                        <div class="row mb-3">
+                            <label for="img" class="col-md-4 col-form-label text-md-right">Subir imagen de
+                                perfil</label>
+                            <img id="imagenSeleccionada" style="max-height: 300px;">
+                        </div>
+                        <!-- input img -->
+                        <div class="row mb-3">
+                            <input name="image" id="image" type="file" required>
+                            @error('imagenSeleccionada')
+                                <span class="invalid-feedback" role="alert">
+                                    <strong>{{ $message }}</strong>
+                                </span>
+                            @enderror
+                        </div>
                     </div>
 
+                    <br>
                     <div class="row mb-3">
                         <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
 
@@ -119,19 +130,4 @@
         </div>
 
     </div>
-    <!--
-        PARA PREVISUALIZAR LA IMAGEN
-        <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script>
-        $(document).ready(function(e) {
-            $('#image').change(function() {
-                let reader = new FileReader();
-                reader.onload = (e) => {
-                    $('#imagenSeleccionada').attr('src', e.target.result);
-                }
-                reader.readAsDataURL(this.files[0]);
-            });
-        });
-    </script>
-     -->
 @endsection

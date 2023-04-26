@@ -16,7 +16,7 @@
                             <label for="run" class="col-md-4 col-form-label text-md-right">{{ __('Run') }}</label>
 
                             <div class="col-md-6">
-                                <input id="run" type="text" class="form-control @error('run') is-invalid @enderror" name="run" value="{{ $user->run }}" required autocomplete="run" autofocus>
+                                <input placeholder="11111111-1" id="run" type="text" class="form-control @error('run') is-invalid @enderror" name="run" value="{{ $user->run }}" required autocomplete="run" autofocus>
 
                                 @error('run')
                                     <span class="invalid-feedback" role="alert">
@@ -84,7 +84,10 @@
                         </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-sm btn-outline-primary">
+                                <a type="button" class="btn btn-sm btn-outline-danger" href="{{ route('users.index')}}">
+                                    {{ __('Cancelar') }}
+                                </a>
+                                <button type="submit" class="ms-2 btn btn-sm btn-outline-primary">
                                     {{ __('Guardar') }}
                                 </button>
                             </div>
