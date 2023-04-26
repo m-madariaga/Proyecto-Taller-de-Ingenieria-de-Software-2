@@ -37,15 +37,13 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js'></script>
     <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
     <script>
-
-      document.addEventListener('DOMContentLoaded', function() {
-        const calendarEl = document.getElementById('calendar')
-        const calendar = new FullCalendar.Calendar(calendarEl, {
-          initialView: 'dayGridMonth'
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarEl = document.getElementById('calendar')
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            })
+            calendar.render()
         })
-        calendar.render()
-      })
-
     </script>
 </head>
 
@@ -53,7 +51,7 @@
     @guest
         <div class="container-fluid" id="login">
             <main class="py-4">
-                @yield('login')
+                @yield('content')
             </main>
         </div>
     @else
@@ -70,7 +68,6 @@
             @endguest
             @yield('js_after')
         </div>
-
 
     @endguest
 

@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('login')
+@section('content')
     <div id="login" class="container-fluid mt-0">
         <div id="page-content" class="row">
             <div id="region-main-box" class="col-12">
