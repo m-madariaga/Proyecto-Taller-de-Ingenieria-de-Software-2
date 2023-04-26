@@ -184,6 +184,14 @@ img[id="logo_ini"] {
     height: 40px;
 }
 
+
+img[id="logo"] {
+    vertical-align: middle;
+    border-style: none;
+    width: 300px;
+    height: 60px;
+}
+
 .remember input {
     width: 20px;
     height: 20px;
