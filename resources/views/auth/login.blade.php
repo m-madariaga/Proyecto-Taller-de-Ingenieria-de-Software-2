@@ -62,7 +62,7 @@
 
 
                                             <div class="form-group">
-                                                <div class="col-md-8 offset-md-4">
+                                                <div class="col d-flex justify-content-center">
                                                     <button type="submit" class="btn btn-primary">
                                                         {{ __('Ingreso') }}
                                                     </button>
