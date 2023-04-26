@@ -6,14 +6,14 @@
         </div>
 
         <ul class="list-unstyled components">
-            <li class="nav-item active">
+            <li class="nav-item active" style="{{ request()->is('admin/*') ? '' : 'display:none' }}">
                 <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="true">
 
                     <i class="fas fa-home fa-lg" aria-hidden="true"></i>
                     <b>Dashboard</b>
                 </a>
             </li>
-            <li>
+            <li class="" style="{{ request()->is('admin/*') ? '' : 'display:none' }}">
                 <a href="#userSubmenu" data-toggle="collapse" aria-expanded="false">
                     <i class="fas fa-user fa-lg" aria-hidden="true"></i>
                     <b>Usuarios</b>
@@ -24,8 +24,8 @@
                     <li><a href="{{ route('permissions.index') }}">Permisos</a></li>
                 </ul>
             </li>
-
-            <li>
+           
+            <li style="{{ request()->is('admin/*') ? '' : 'display:none' }}">
                 <a href="#generatorSubmenu" data-toggle="collapse" aria-expanded="false">
 
                     <i class="fas fa-industry fa-lg" aria-hidden="true"></i>
@@ -48,7 +48,7 @@
                     <li><a href="#">Mantenciones</a></li>
                 </ul>
             </li>
-            <li>
+            <li style="{{ request()->is('admin/*', 'analista/*') ? '' : 'display:none' }}">
                 <a href="#reportSubmenu" data-toggle="collapse" aria-expanded="false">
                     <i class="fas fa-chart-bar fa-lg" aria-hidden="true"></i>
                     <b>Reporte</b>
@@ -59,7 +59,7 @@
                 </ul>
             </li>
 
-            <li>
+            <li style="{{ request()->is('admin/*') ? '' : 'display:none' }}">
                 <a href="#">
                     <i class="fa fa-book fa-lg" aria-hidden="true"></i>
                     <b>Sección de API´S</b>
