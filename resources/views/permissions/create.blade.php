@@ -1,42 +1,25 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Ingresar permiso</div>
-
-                <div class="card-body">
-                    <form method="POST" action="{{ route('permissions.store') }}">
-                        @csrf
-
-                        <div class="form-group row mb-3">
-                            <label for="name" class="col-md-4 col-form-label text-md-right">Nombre</label>
-
-                            <div class="col-md-6">
-                                <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" required autocomplete="name" autofocus>
-
-                                @error('name')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-                            </div>
-                        </div>
-
-
-                        <div class="form-group row mb-0">
-                            <div class="col-md-6 offset-md-4">
-                                <button type="submit" class="btn btn-sm btn-outline-primary">
-                                    Ingresar
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
+    <div class="container">
+        <h1>Agregar Permiso</h1>
+        <form action="{{ route('permissions.store') }}" method="POST">
+            @csrf
+            <div class="form-group">
+                <label for="name">Nombre</label>
+                <input type="text" name="name" id="name" class="form-control" required>
             </div>
-        </div>
+
+            {{-- <div class="form-group">
+                <label for="role_type">Tipo de rol</label>
+                <select class="form-control" id="role_type" name="role_type">
+                    <option value="1">Admin</option>
+                    <option value="2">Analista</option>
+                    <option value="3">Trabajador</option>
+                </select>
+            </div> --}}
+
+            <button type="submit" class="btn btn-primary">Agregar</button>
+        </form>
     </div>
-</div>
 @endsection
