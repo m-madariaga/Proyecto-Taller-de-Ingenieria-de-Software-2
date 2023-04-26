@@ -8,7 +8,7 @@
                 <div class="card-header">{{ __('Editar usuario') }}</div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('users.update', $user->id) }}">
+                    <form method="POST" action="{{ route('users.update', $user->id) }}" enctype="multipart/form-data">
                         @csrf
                         @method('PUT')
 
@@ -53,7 +53,14 @@
                                 @enderror
                             </div>
                         </div>
-
+                        <!-- PARA VISUALIZAR LA IMAGEN -->
+                        <div class="form-group row mb-3">
+                            <img src="/imagen/{{ $user->image}}" id="imagenSeleccionada" style="max-height: 300px;">
+                        </div>
+                        <!-- input img -->
+                        <div class="form-group row mb-3">
+                            <input name="image" id="image" type="file">
+                        </div>
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">
                                 <button type="submit" class="btn btn-sm btn-outline-primary">

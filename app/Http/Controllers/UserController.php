@@ -57,14 +57,20 @@ class UserController extends Controller
             'password' => 'required|string|min:8|confirmed',
             'tipo_de_cuenta' => 'nullable',
             'role' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,bmp,gif|max:2048'
         ]);
-
+        if($image = $request->file('image')){
+            $rutaGuardarImg = 'imagen/';
+            $imagenUser = date('YmdHis').".".$image->getClientOriginalExtension();
+            $image->move($rutaGuardarImg,$imagenUser);
+        }
         $user = new User([
             'run' => $request->get('run'),
             'name' => $request->get('name'),
             'email' => $request->get('email'),
             'password' => bcrypt($request->get('password')),
             'tipo_de_cuenta' => $request->get('tipo_de_cuenta'),
+            'image' => $imagenUser
         ]);
 
         $user->save();
@@ -114,12 +120,21 @@ class UserController extends Controller
             'email' => 'required',
             'tipo_de_cuenta' => 'nullable',
             'role' => 'nullable',
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,svg,bmp,gif|max:2048'
         ]);
 
         $user = User::find($id);
         $user->name = $request->get('name');
         $user->email = $request->get('email');
         $user->tipo_de_cuenta = $request->get('tipo_de_cuenta');
+        if($image = $request->file('image')){
+            $rutaGuardarImg = 'imagen/';
+            $imagenUser = date('YmdHis').".".$image->getClientOriginalExtension();
+            $image->move($rutaGuardarImg,$imagenUser);
+            $user->image = $imagenUser;
+        }else{
+            unset($user->image);
+        }
         $user->save();
         $user->syncRoles([$request->role]);
 
