@@ -25,7 +25,7 @@ class UserController extends Controller
             }else{
                 $user->role = $roles->implode("");
             }
-            
+
         }
 
         return view('users.index', compact('users'));
@@ -54,7 +54,7 @@ class UserController extends Controller
             'run' => 'required|unique:users,run',
             'name' => 'required',
             'email' => 'required|unique:users,email',
-            'password' => 'required|string|min:8',
+            'password' => 'required|string|min:8|confirmed',
             'tipo_de_cuenta' => 'nullable',
             'role' => 'nullable',
         ]);

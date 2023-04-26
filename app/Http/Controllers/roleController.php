@@ -22,7 +22,7 @@ class roleController extends Controller
             }
             $user_amount = User::role($role->name)->get();
             $role->role_count= $user_amount->count();
-            
+
         }
 
         return view('roles.index', compact('roles'));

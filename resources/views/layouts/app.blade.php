@@ -13,12 +13,13 @@
     <!-- Scripts -->
 
     <script src="{{ asset('js/app.js') }}" defer></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
+
+
     <!-- Fonts -->
     <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
 
     <!-- Styles -->
+    @yield('css_before')
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
     <!-- Our Custom CSS -->
@@ -30,7 +31,7 @@
     <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
         integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
     </script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
@@ -44,6 +45,7 @@
                 @yield('login')
             </main>
         </div>
+
     @else
         <div id="app" class="wrapper">
             @guest
@@ -56,7 +58,7 @@
                     </main>
                 </div>
             @endguest
-
+@yield('js_after')
         </div>
 
 
