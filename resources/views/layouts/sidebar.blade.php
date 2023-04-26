@@ -1,8 +1,8 @@
 <div class="wrapper">
     <nav class="sidebar sidebar-offcanvas" id="sidebar">
         <div class="sidebar-header">
-            <h3>Proyecto trabajo</h3>
-            <strong>PRO</strong>
+            <h3>PowerLandes</h3>
+            <strong>LP</strong>
         </div>
 
         <ul class="list-unstyled components">

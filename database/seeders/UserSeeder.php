@@ -31,6 +31,7 @@ class UserSeeder extends Seeder
             $user->name             = 'admin demo';
             $user->email            = 'admin@test.cl';
             $user->password         = bcrypt('asdf1234');
+            $user->image            = 'admin_profile.png';
             $user->tipo_de_cuenta   = 1;
         $user->save();
         $user->assignRole($role1);
@@ -40,6 +41,7 @@ class UserSeeder extends Seeder
             $user->name             = 'analista demo';
             $user->email            = 'analista@test.cl';
             $user->password         = bcrypt('asdf1234');
+            $user->image            = 'analyst_profile.png';
             $user->tipo_de_cuenta   = 2;
         $user->save();
         $user->assignRole($role2);
@@ -49,6 +51,7 @@ class UserSeeder extends Seeder
             $user->name             = 'trabajador demo';
             $user->email            = 'trabajador@test.cl';
             $user->password         = bcrypt('asdf1234');
+            $user->image            = 'user_profile.png';
             $user->tipo_de_cuenta   = 3;
         $user->save();
         $user->assignRole($role3);
