@@ -58,7 +58,7 @@
                                 <span class="text-secondary">Desconectado</span>
                             @endif
                         </td>
-                        <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H') }}</td>
+                        <td>{{ \Carbon\Carbon::parse($user->last_seen)->format('Y-m-d H:m') }}</td>
                         <td>
                             <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary">Editar</a>
                             <form action="{{ route('users.destroy', $user->id) }}" method="POST" style="display: inline;">
