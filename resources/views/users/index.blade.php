@@ -31,6 +31,7 @@
                 <th>Nombre</th>
                 <th>Email</th>
                 <th>Rol</th>
+                <th>Imagen</th>
                 <th>Acciones</th>
             </tr>
         </thead>
@@ -42,6 +43,9 @@
                     <td>{{ $user->email }}</td>
                     <td>
                         {{ $user->role}}
+                    </td>
+                    <td>
+                        <img src="/imagen/{{$user->image}}" width="60%">
                     </td>
                     <td>
                         <a href="{{ route('users.edit', $user->id) }}" class="btn btn-sm btn-outline-primary"><i class="fa fa-edit"></i></a>

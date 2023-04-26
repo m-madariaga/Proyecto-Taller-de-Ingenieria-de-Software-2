@@ -6,7 +6,7 @@
         <div class="card-header">{{ __('Registrar') }}</div>
 
         <div class="card-body">
-            <form method="POST" action="{{ route('users.store') }}">
+            <form method="POST" action="{{ route('users.store') }}" enctype="multipart/form-data">
                 @csrf
 
                 <div class="row mb-3">
@@ -68,6 +68,15 @@
                         @enderror
                     </div>
                 </div>
+                <!-- PARA VISUALIZAR LA IMAGEN -->
+                <div class="row mb-3">
+                    <img id="imagenSeleccionada" style="max-height: 300px;">
+                </div>
+                <!-- input img -->
+                <div class="row mb-3">
+                    <input name="image" id="image" type="file">
+                </div>
+
 
                 <div class="row mb-3">
                     <label for="password" class="col-md-4 col-form-label text-md-end">{{ __('Contraseña') }}</label>
@@ -94,6 +103,7 @@
 
                 <div class="row mb-0">
                     <div class="col-md-6 offset-md-4">
+                        <a href="{{route('users.index')}}" class="btn ">Cancelar</a>
                         <button type="submit" class="btn btn-primary">
                             {{ __('Registrar') }}
                         </button>
@@ -104,4 +114,21 @@
     </div>
 
 </div>
+
+
+<!-- 
+    PARA PREVISUALIZAR LA IMAGEN
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    $(document).ready(function (e){
+        $('#image').change(function(){
+            let reader = new FileReader();
+            reader.onload = (e) => {
+                $('#imagenSeleccionada').attr('src', e.target.result);
+            }
+            reader.readAsDataURL(this.files[0]);
+        });
+    });
+</script>
+ -->
 @endsection
