@@ -10,163 +10,66 @@
     <title>{{ config('app.name', 'Laravel') }}</title>
 
     <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
 
+    <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <!-- Fonts -->
-    <link rel="dns-prefetch" href="//fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.cdnfonts.com/css/montserrat" rel="stylesheet">
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- Our Custom CSS -->
+    <link rel="stylesheet" href="{{ asset('css/sidebar.css') }}">
+    <!-- Font Awesome JS -->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/solid.js"
+        integrity="sha384-tzzSw1/Vo+0N5UhStP3bvwWPq+uvzCMfrN1fEFe+xBmv1C/AtVX5K0uZtmcHitFZ" crossorigin="anonymous">
+    </script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/fontawesome.js"
+        integrity="sha384-6OIrr52G08NpOFSZdxxz1xdNSndlD4vdcf/q2myIUVO0VsqaGHJsB0RaBE01VTOY" crossorigin="anonymous">
+    </script>
 
-    <style>
-        body {
-            background-color: #0069A5;
-            font-family: 'Montserrat', sans-serif;
-        }
-
-        .signup-form h2,
-        .reset-form h2 {
-            color: #1a2341;
-            text-align: center;
-            margin-bottom: 10%;
-        }
-
-
-        .signup-form,
-        .reset-form {
-            border-radius: 3px;
-            margin-bottom: 15px;
-            background-color: #f2f3f7;
-            box-shadow: 0px 2prgb(184, 184, 184)gba(0, 0, 0, 0.3);
-            padding: 20px;
-            width: 700px;
-            margin: 0 auto;
-            font-size: 15px;
-        }
-
-        .loginup-form button[id="button-login"],
-        .signup-form button[id="button-save"] {
-            background-color: #0069A5;
-            color: #f2f3f7;
-            font-size: 16px;
-            min-width: 140px;
-            outline: none !important;
-        }
-
-
-        .loginup-form button[id="button-save"] {
-            background-color: #0069A5;
-            color: #f2f3f7;
-            font-size: 16px;
-            min-width: 140px;
-            outline: none !important;
-        }
-
-        .text-center[id="havent_register"] {
-            color: #f2f3f7;
-
-        }
-
-        .text-center a[id="link_register"] {
-            color: #f2f3f7;
-            text-decoration: underline;
-        }
-
-        .form-group,
-        .signup-form {
-            margin-bottom: 20px;
-        }
-
-        .text-center a[id="forgot_user"] {
-            color: #0b0b0b;
-        }
-
-        .signup-form .form-select[id="rol_register"] {
-            margin-top: 20px;
-            margin-bottom: 15px;
-
-        }
-
-        .navbar[ id="nav_header"]{
-            background-color:  #1a2341;
-           
-        }
-
-        .navbar[ id="nav_header"] .navbar-brand{
-            color: #f2f3f7;
-            font-family: 'Montserrat', sans-serif;
-        }
-        .aside{
-            background-color:  #1A2341;
-            color: #f2f3f7;
-        }
- 
-     
-    </style>
+    <script src='https://code.jquery.com/jquery-3.3.1.slim.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
+    <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarEl = document.getElementById('calendar')
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            })
+            calendar.render()
+        })
+    </script>
 </head>
+
 <body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light shadow-sm" id="nav_header">
-            <div class="container">
-                <a class="navbar-brand" href="#">
-                    Proyecto Trabajo
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <!-- Left Side Of Navbar -->
-                    <ul class="navbar-nav me-auto">
-
-                    </ul>
-
-                    <!-- Right Side Of Navbar -->
-                    <ul class="navbar-nav ms-auto">
-                        <!-- Authentication Links -->
-                        @guest
-                            @if (Route::has('login'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
-                                </li>
-                            @endif
-
-                            {{-- @if (Route::has('register'))
-                                <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
-                                </li>
-                            @endif --}}
-                        @else
-                            <li class="nav-item dropdown">
-                                <a id="navbarDropdown" class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" v-pre>
-                                    {{ Auth::user()->name }}
-                                </a>
-
-                                <div class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                                    <a class="dropdown-item" href="{{ route('logout') }}"
-                                       onclick="event.preventDefault();
-                                                     document.getElementById('logout-form').submit();">
-                                        {{ __('Logout') }}
-                                    </a>
-
-                                    <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                                        @csrf
-                                    </form>
-                                </div>
-                            </li>
-                        @endguest
-                    </ul>
+    @guest
+        <div class="container-fluid" id="login">
+            <main class="py-4">
+                @yield('content')
+            </main>
+        </div>
+    @else
+        <div id="app" class="wrapper">
+            @guest
+            @else
+                @include('layouts.sidebar')
+                <div id=content>
+                    @include('layouts.sidehead')
+                    <main class="py-4">
+                        @yield('content')
+                    </main>
                 </div>
-            </div>
-        </nav>
+            @endguest
+            @yield('js_after')
+        </div>
 
-        
+    @endguest
 
-        <main class="py-4">
-            @yield('content')
-        </main>
-    </div>
 </body>
 
 </html>
