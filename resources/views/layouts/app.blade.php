@@ -35,13 +35,23 @@
     <script src='https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js'></script>
     <script src='https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js'></script>
     <script src='https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.4/js/tether.min.js'></script>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar/index.global.min.js'></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const calendarEl = document.getElementById('calendar')
+            const calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth'
+            })
+            calendar.render()
+        })
+    </script>
 </head>
 
 <body>
     @guest
         <div class="container-fluid" id="login">
             <main class="py-4">
-                @yield('login')
+                @yield('content')
             </main>
         </div>
     @else
@@ -56,9 +66,8 @@
                     </main>
                 </div>
             @endguest
-
+            @yield('js_after')
         </div>
-
 
     @endguest
 
