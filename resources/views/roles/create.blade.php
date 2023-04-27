@@ -29,7 +29,7 @@
                             <label for="role_type" class="col-md-4 col-form-label text-md-right">Tipo de rol</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" id="role_type" @error('role_type') is-invalid @enderror" name="role_type">
+                                <select class="form-select" id="role_type" @error('role_type') is-invalid @enderror" name="role_type">
                                     <option value="1">Admin</option>
                                     <option value="2">Analista</option>
                                     <option value="3">Trabajador</option>

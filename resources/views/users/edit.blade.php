@@ -57,7 +57,7 @@
                             <label for="role" class="col-md-4 col-form-label text-md-right">Rol</label>
 
                             <div class="col-md-6">
-                                <select class="form-control" id="role" @error('role') is-invalid @enderror" name="role">
+                                <select class="form-select" id="role" @error('role') is-invalid @enderror" name="role">
                                     @foreach($roles as $role)
                                         <option value="{{ $role }}"
                                         {{-- @if($role->role_type==$current_role)
